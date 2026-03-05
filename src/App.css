@@ -1,0 +1,10 @@
+/* Wyrify investor app – ton-i-ton tema */
+.wyrify-app {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wyrify-app button {
+  font-family: inherit;
+}
