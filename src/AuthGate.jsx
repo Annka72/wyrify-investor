@@ -14,9 +14,10 @@ const styles = {
 
 // Investor-appen lastes først ETTER innlogging (ikke med første sidevisning)
 const App = lazy(() => import("./App.jsx"));
+const AUTH_KEY = "wyrify_investor_auth";
 
 export default function AuthGate() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(() => typeof window !== "undefined" && sessionStorage.getItem(AUTH_KEY) === "1");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +26,7 @@ export default function AuthGate() {
     e.preventDefault();
     setError("");
     if (username === INVESTOR_LOGIN.username && password === INVESTOR_LOGIN.password) {
+      if (typeof window !== "undefined") sessionStorage.setItem(AUTH_KEY, "1");
       setAuthenticated(true);
     } else {
       setError("Feil brukernavn eller passord.");

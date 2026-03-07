@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wyrify – Investor Deck</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, sans-serif; background: #1D2C2A; color: #E0E0E0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    #login-gate { width: 100%; max-width: 320px; background: #243835; border: 1px solid #2B3B39; border-radius: 8px; padding: 2rem; }
+    #login-gate h1 { font-size: 1rem; letter-spacing: 0.15em; margin: 0 0 1.5rem; }
+    #login-gate p { font-size: 0.85rem; color: #A0A0A0; margin: 0 0 1.5rem; }
+    #login-gate label { display: block; font-size: 0.75rem; color: #A0A0A0; margin-bottom: 0.35rem; }
+    #login-gate input { width: 100%; padding: 0.6rem 0.75rem; background: #1A2826; border: 1px solid #2B3B39; border-radius: 6px; color: #E0E0E0; font-size: 0.95rem; margin-bottom: 1rem; }
+    #login-gate .err { color: #e57373; font-size: 0.8rem; margin-bottom: 1rem; }
+    #login-gate button { width: 100%; padding: 0.75rem; background: #3ADF9C; color: #0a1612; border: none; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
+    #root { display: none; min-height: 100vh; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="login-gate">
+    <h1>WYRIFY INVESTOR</h1>
+    <p>Logg inn med brukernavn og passord du har fått.</p>
+    <form id="login-form">
+      <label>Brukernavn</label>
+      <input type="text" name="username" autocomplete="username" required />
+      <label>Passord</label>
+      <input type="password" name="password" autocomplete="current-password" required />
+      <p class="err" id="err" style="display:none"></p>
+      <button type="submit">Logg inn</button>
+    </form>
+  </div>
+  <div id="root"></div>
+  <script>
+    (function() {
+      var AUTH_KEY = 'wyrify_investor_auth';
+      var USER = 'Wyrify';
+      var PASS = 'Wyrify26';
+      var APP_SCRIPT = '__APP_SCRIPT_SRC__';
+
+      if (sessionStorage.getItem(AUTH_KEY) === '1') {
+        document.getElementById('login-gate').style.display = 'none';
+        document.getElementById('root').style.display = 'block';
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.src = APP_SCRIPT;
+        document.body.appendChild(s);
+        return;
+      }
+
+      document.getElementById('login-form').onsubmit = function(e) {
+        e.preventDefault();
+        var u = this.username.value.trim();
+        var p = this.password.value;
+        var errEl = document.getElementById('err');
+        if (u === USER && p === PASS) {
+          sessionStorage.setItem(AUTH_KEY, '1');
+          document.getElementById('login-gate').style.display = 'none';
+          document.getElementById('root').style.display = 'block';
+          var s = document.createElement('script');
+          s.type = 'module';
+          s.src = APP_SCRIPT;
+          document.body.appendChild(s);
+        } else {
+          errEl.textContent = 'Feil brukernavn eller passord.';
+          errEl.style.display = 'block';
+        }
+      };
+    })();
+  </script>
+</body>
+</html>
