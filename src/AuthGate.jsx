@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Suspense, lazy } from "react";
 
 // Brukernavn og passord du sender til investorer
 const INVESTOR_LOGIN = { username: "Wyrify", password: "Wyrify26" };
@@ -12,7 +12,10 @@ const styles = {
   accent: "#3ADF9C",
 };
 
-export default function AuthGate({ children }) {
+// Investor-appen lastes først ETTER innlogging (ikke med første sidevisning)
+const App = lazy(() => import("./App.jsx"));
+
+export default function AuthGate() {
   const [authenticated, setAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +32,11 @@ export default function AuthGate({ children }) {
   };
 
   if (authenticated) {
-    return children;
+    return (
+      <Suspense fallback={<div style={{ minHeight: "100vh", background: styles.bg, display: "flex", alignItems: "center", justifyContent: "center", color: styles.text }}>Laster...</div>}>
+        <App />
+      </Suspense>
+    );
   }
 
   return (
