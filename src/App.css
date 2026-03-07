@@ -8,3 +8,111 @@
 .wyrify-app button {
   font-family: inherit;
 }
+
+/* Mobil: navigasjon */
+@media (max-width: 768px) {
+  .wyrify-app .nav-desktop-links {
+    display: none !important;
+  }
+  .wyrify-app .nav-investor-badge {
+    display: none !important;
+  }
+  .wyrify-app .nav-wrap {
+    padding: 0.75rem 1rem !important;
+  }
+  .wyrify-app .nav-brand .nav-ticker {
+    display: none;
+  }
+  .wyrify-app .nav-mobile-toggle {
+    display: flex !important;
+  }
+  .wyrify-app .nav-mobile-menu {
+    display: flex;
+  }
+  .wyrify-app .nav-mobile-menu.nav-mobile-menu--closed {
+    display: none;
+  }
+  .wyrify-app .nav-mobile-menu:not(.nav-mobile-menu--closed) {
+    background: rgba(29, 44, 42, 0.98);
+  }
+}
+
+@media (min-width: 769px) {
+  .wyrify-app .nav-mobile-toggle {
+    display: none !important;
+  }
+  .wyrify-app .nav-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Mobil: hero (første side) */
+@media (max-width: 768px) {
+  .wyrify-app .hero-section {
+    padding: 5rem 1.25rem 3rem !important;
+    min-height: auto !important;
+    align-items: flex-start !important;
+    padding-top: 5.5rem !important;
+  }
+  .wyrify-app .hero-content {
+    max-width: 100% !important;
+  }
+  .wyrify-app .hero-label {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.15em;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .wyrify-app .hero-label .hero-label-line {
+    width: 16px !important;
+  }
+  .wyrify-app .hero-title {
+    font-size: clamp(2rem, 8vw, 2.75rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  .wyrify-app .hero-description {
+    font-size: 0.95rem !important;
+    margin-top: 1.25rem !important;
+    line-height: 1.6 !important;
+  }
+  .wyrify-app .hero-pills {
+    margin-top: 1.5rem !important;
+    gap: 0.5rem !important;
+  }
+  .wyrify-app .hero-pills .feature-pill {
+    font-size: 0.65rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+  .wyrify-app .hero-cta-wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+  }
+  .wyrify-app .hero-cta-wrap button {
+    width: 100%;
+    padding: 0.9rem 1.5rem !important;
+    font-size: 0.8rem !important;
+  }
+  .wyrify-app .hero-beacon,
+  .wyrify-app .hero-glow {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .wyrify-app .hero-section .hero-grid,
+  .wyrify-app .hero-section .noise-overlay {
+    display: none !important;
+  }
+}
+
+/* Mobil: generell seksjonspadding */
+@media (max-width: 768px) {
+  .wyrify-app section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}

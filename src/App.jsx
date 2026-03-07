@@ -51,6 +51,7 @@ const NAV_ITEMS = ["Overview", "Product", "Market", "Technology", "Team"];
 
 export default function App() {
   const [scrollY, setScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -58,7 +59,10 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMobileMenuOpen(false);
+  };
 
   return (
     <div className="wyrify-app" style={{ background: palette.bg, color: palette.text, minHeight: "100vh", overflowX: "hidden" }}>
@@ -88,16 +92,16 @@ export default function App() {
       `}</style>
 
       {/* NAV */}
-      <nav style={{
+      <nav className="nav-wrap" style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
         background: scrollY > 60 ? `${palette.bg}ef` : "transparent",
         backdropFilter: scrollY > 60 ? "blur(20px)" : "none",
         borderBottom: scrollY > 60 ? `1px solid ${palette.border}` : "none",
         transition: "all 0.4s",
         padding: "1rem 2.5rem",
-        display: "flex", alignItems: "center", justifyContent: "space-between",
+        display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+        <div className="nav-brand" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <div style={{ width: 28, height: 28, position: "relative" }}>
             <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "100%" }}>
               <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke={palette.accent} strokeWidth="1.5"/>
@@ -106,28 +110,40 @@ export default function App() {
             </svg>
           </div>
           <span style={{ fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.95rem", color: palette.textBright, letterSpacing: "0.15em" }}>WYRIFY</span>
-          <span className="ticker">WYR</span>
+          <span className="ticker nav-ticker">WYR</span>
         </div>
-        <div style={{ display: "flex", gap: "2rem" }}>
+        <div className="nav-desktop-links" style={{ display: "flex", gap: "2rem" }}>
           {NAV_ITEMS.map((n) => (
             <span key={n} className="nav-link" onClick={() => scrollTo(n.toLowerCase())}>{n}</span>
           ))}
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+        <div className="nav-investor-badge" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <div style={{ width: 6, height: 6, borderRadius: "50%", background: palette.accent, boxShadow: `0 0 8px ${palette.accent}` }}/>
           <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: palette.textMuted }}>INVESTOR DECK</span>
+        </div>
+        <button type="button" className="nav-mobile-toggle" aria-label="Meny" onClick={() => setMobileMenuOpen((o) => !o)} style={{ display: "none", background: "none", border: "none", padding: "0.5rem", cursor: "pointer", color: palette.text }}>
+          {mobileMenuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          )}
+        </button>
+        <div className={`nav-mobile-menu ${mobileMenuOpen ? "" : "nav-mobile-menu--closed"}`} style={{ width: "100%", flexDirection: "column", gap: "0.75rem", paddingTop: "1rem", borderTop: `1px solid ${palette.border}` }}>
+          {NAV_ITEMS.map((n) => (
+            <span key={n} className="nav-link" style={{ padding: "0.5rem 0", fontSize: "0.85rem" }} onClick={() => scrollTo(n.toLowerCase())}>{n}</span>
+          ))}
         </div>
       </nav>
 
       {/* HERO */}
-      <section id="overview" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden", padding: "0 5vw", background: `linear-gradient(145deg, ${palette.bgCard} 0%, ${palette.bg} 40%, ${palette.bgSection} 100%)` }}>
-        <div style={{ position: "absolute", left: "-10%", top: "-15%", width: "55vw", height: "55vw", borderRadius: "50%", background: `radial-gradient(circle, ${palette.border}44 0%, ${palette.bg}55 40%, transparent 70%)`, filter: "blur(40px)", pointerEvents: "none" }}/>
-        <div style={{ position: "absolute", right: "-5%", bottom: "-10%", width: "40vw", height: "40vw", borderRadius: "50%", background: `radial-gradient(circle, ${palette.bg}33 0%, transparent 70%)`, filter: "blur(60px)", pointerEvents: "none" }}/>
+      <section id="overview" className="hero-section" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden", padding: "0 5vw", background: `linear-gradient(145deg, ${palette.bgCard} 0%, ${palette.bg} 40%, ${palette.bgSection} 100%)` }}>
+        <div className="hero-glow" style={{ position: "absolute", left: "-10%", top: "-15%", width: "55vw", height: "55vw", borderRadius: "50%", background: `radial-gradient(circle, ${palette.border}44 0%, ${palette.bg}55 40%, transparent 70%)`, filter: "blur(40px)", pointerEvents: "none" }}/>
+        <div className="hero-glow" style={{ position: "absolute", right: "-5%", bottom: "-10%", width: "40vw", height: "40vw", borderRadius: "50%", background: `radial-gradient(circle, ${palette.bg}33 0%, transparent 70%)`, filter: "blur(60px)", pointerEvents: "none" }}/>
         <div className="hero-grid"/>
         <div className="noise-overlay"/>
-        <div style={{ position: "absolute", right: "8%", top: "50%", transform: "translateY(-50%)", width: "min(45vw, 520px)", height: "min(45vw, 520px)", opacity: 0.1, borderRadius: "50%", background: `radial-gradient(circle, ${palette.tealBright}, transparent 70%)`, filter: "blur(60px)" }}/>
+        <div className="hero-glow" style={{ position: "absolute", right: "8%", top: "50%", transform: "translateY(-50%)", width: "min(45vw, 520px)", height: "min(45vw, 520px)", opacity: 0.1, borderRadius: "50%", background: `radial-gradient(circle, ${palette.tealBright}, transparent 70%)`, filter: "blur(60px)" }}/>
 
-        <div className="float-anim" style={{ position: "absolute", right: "10%", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center", justifyContent: "center", width: 320, height: 320 }}>
+        <div className="hero-beacon float-anim" style={{ position: "absolute", right: "10%", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center", justifyContent: "center", width: 320, height: 320 }}>
           {[1, 1.5, 2, 2.5].map((s, i) => (
             <div key={i} style={{ position: "absolute", width: 80 * s, height: 80 * s, borderRadius: "50%", border: `1px solid ${palette.tealBright}${Math.floor(40 - i * 8).toString(16).padStart(2,"0")}`, animation: `pulse-ring ${2 + i * 0.5}s ease-out ${i * 0.4}s infinite` }}/>
           ))}
@@ -140,30 +156,30 @@ export default function App() {
           </div>
         </div>
 
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 680 }}>
-          <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.7rem", color: palette.accentDim, letterSpacing: "0.2em", marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <div style={{ width: 24, height: 1, background: palette.accentDim }}/>
+        <div className="hero-content" style={{ position: "relative", zIndex: 2, maxWidth: 680 }}>
+          <div className="hero-label" style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.7rem", color: palette.accentDim, letterSpacing: "0.2em", marginBottom: "1.5rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <div className="hero-label-line" style={{ width: 24, height: 1, background: palette.accentDim }}/>
             CRYPTOCURRENCY TRANSACTION HARDWARE
-            <div style={{ width: 24, height: 1, background: palette.accentDim }}/>
+            <div className="hero-label-line" style={{ width: 24, height: 1, background: palette.accentDim }}/>
           </div>
 
-          <h1 className="glow-text" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(3.5rem, 7vw, 6rem)", fontWeight: 300, lineHeight: 0.95, color: palette.textBright, marginBottom: "0.25rem", letterSpacing: "-0.02em" }}>
+          <h1 className="glow-text hero-title" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(3.5rem, 7vw, 6rem)", fontWeight: 300, lineHeight: 0.95, color: palette.textBright, marginBottom: "0.25rem", letterSpacing: "-0.02em" }}>
             The Future<br/>
             <span style={{ fontStyle: "italic", color: palette.seafoam }}>of Payments</span><br/>
             <span style={{ fontWeight: 600 }}>Is Here</span>
           </h1>
 
-          <p style={{ fontSize: "1.1rem", color: palette.textMuted, lineHeight: 1.7, marginTop: "2rem", maxWidth: 520, fontWeight: 300 }}>
+          <p className="hero-description" style={{ fontSize: "1.1rem", color: palette.textMuted, lineHeight: 1.7, marginTop: "2rem", maxWidth: 520, fontWeight: 300 }}>
             Wyrify is the world's first non-bank, non-card instant-transaction retail POS platform — replacing the VISA/Mastercard monopoly with blockchain-powered hardware that works anywhere, for anyone.
           </p>
 
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "2rem" }}>
+          <div className="hero-pills" style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", marginTop: "2rem" }}>
             {["Instant Settlement", "Zero Chargebacks", "0.5% Fee", "1–2 sec Transactions", "Any Crypto/Fiat"].map(tag => (
               <span key={tag} className="feature-pill">{tag}</span>
             ))}
           </div>
 
-          <div style={{ display: "flex", gap: "1.5rem", marginTop: "3rem", alignItems: "center" }}>
+          <div className="hero-cta-wrap" style={{ display: "flex", gap: "1.5rem", marginTop: "3rem", alignItems: "center" }}>
             <button onClick={() => scrollTo("product")} style={{ background: palette.accent, border: "none", color: "#0a1612", padding: "0.85rem 2.5rem", fontFamily: "'Space Mono', monospace", fontSize: "0.75rem", letterSpacing: "0.1em", cursor: "pointer", borderRadius: "6px", boxShadow: `0 4px 24px ${palette.accent}55` }}>
               EXPLORE PLATFORM →
             </button>
