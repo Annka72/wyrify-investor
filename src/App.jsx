@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
+import beaconPaymentImg from "./assets/beacon-payment.png";
 
 // Ton-i-ton fargepalett med blåere teal (mindre grønn i lyseste accent)
 const palette = {
@@ -251,9 +252,12 @@ export default function App() {
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 300, color: palette.textBright, marginBottom: "1rem" }}>
               A complete payment platform,<br/><span style={{ fontStyle: "italic", color: palette.seafoam }}>reimagined from the ground up</span>
             </h2>
-            <p style={{ color: palette.textMuted, maxWidth: 620, lineHeight: 1.7, marginBottom: "3.5rem" }}>
+            <p style={{ color: palette.textMuted, maxWidth: 620, lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Wyrify combines a Bluetooth BLE hardware beacon, mobile apps, and an online checkout solution — all running on a proprietary proof-of-stake blockchain with 1–2 second confirmation times.
             </p>
+            <div style={{ marginTop: "2rem", marginBottom: "3rem", textAlign: "center" }}>
+              <img src={beaconPaymentImg} alt="Wyrify beacon: to telefoner og beacon i betalingsflyt – request og confirm" style={{ maxWidth: "100%", width: "min(560px, 90vw)", height: "auto", borderRadius: 8, border: `1px solid ${palette.border}` }} />
+            </div>
           </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "4rem" }}>
