@@ -1,23 +1,23 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
-// Ton-i-ton fargepalett (beholdt fra referanse) – brukes på Wyrify investor-prospektet
+// Ton-i-ton fargepalett med blåere teal (mindre grønn i lyseste accent)
 const palette = {
   bg: "#1D2C2A",
   bgCard: "#243835",
   bgSection: "#1A2826",
-  teal: "#28A67D",
-  tealLight: "#32C990",
-  tealBright: "#3ADF9C",
-  seafoam: "#3ADF9C",
+  teal: "#289A85",
+  tealLight: "#30BFA0",
+  tealBright: "#34D4B8",
+  seafoam: "#34D4B8",
   metalDark: "#152C28",
-  accent: "#3ADF9C",
-  accentDim: "#2AB885",
+  accent: "#34D4B8",
+  accentDim: "#2AAD98",
   border: "#2B3B39",
   text: "#E0E0E0",
   textMuted: "#A0A0A0",
   textBright: "#E0E0E0",
-  gold: "#5BA88A",
+  gold: "#5A9E8E",
   gradBlue: "#1D2C2A",
   gradTeal: "#1D2C2A",
   gradMid: "#1D2C2A",

@@ -9,7 +9,7 @@ const styles = {
   border: "#2B3B39",
   text: "#E0E0E0",
   textMuted: "#A0A0A0",
-  accent: "#3ADF9C",
+  accent: "#34D4B8",
 };
 
 // Investor-appen lastes først ETTER innlogging (ikke med første sidevisning)
