@@ -102,8 +102,18 @@ function LoginScreen({ onSuccess }) {
 }
 
 export default function App() {
-  const [authenticated, setAuthenticated] = useState(() => sessionStorage.getItem(AUTH_KEY) === "1");
+  const [authenticated, setAuthenticated] = useState(false);
+  const [showApp, setShowApp] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+
+  // Først vis alltid innlogging; sjekk sessionStorage etter mount (så innhold ikke blitzer)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (sessionStorage.getItem(AUTH_KEY) === "1") {
+      setAuthenticated(true);
+    }
+    setShowApp(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -113,6 +123,9 @@ export default function App() {
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
+  if (!showApp) {
+    return <div style={{ minHeight: "100vh", background: palette.bg }} />;
+  }
   if (!authenticated) {
     return <LoginScreen onSuccess={() => setAuthenticated(true)} />;
   }
