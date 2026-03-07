@@ -1,9 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
-// Midlertidig enkel auth – brukernavn/passord du sender til investorer (ingen lagring, må logge inn ved hver åpning)
-const INVESTOR_LOGIN = { username: "Wyrify", password: "Wyrify26" };
-
 // Ton-i-ton fargepalett (beholdt fra referanse) – brukes på Wyrify investor-prospektet
 const palette = {
   bg: "#1D2C2A",
@@ -52,55 +49,7 @@ const Reveal = ({ children, delay = 0, className = "" }) => {
 
 const NAV_ITEMS = ["Overview", "Product", "Market", "Technology", "Team"];
 
-function LoginScreen({ onSuccess }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError("");
-    if (username === INVESTOR_LOGIN.username && password === INVESTOR_LOGIN.password) {
-      onSuccess();
-    } else {
-      setError("Feil brukernavn eller passord.");
-    }
-  };
-
-  return (
-    <div className="wyrify-app" style={{ background: palette.bg, color: palette.text, minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "1rem" }}>
-      <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: 320, background: palette.bgCard, border: `1px solid ${palette.border}`, borderRadius: 8, padding: "2rem" }}>
-        <h1 style={{ fontFamily: "'Space Mono', monospace", fontSize: "1rem", letterSpacing: "0.15em", marginBottom: "1.5rem", color: palette.textBright }}>WYRIFY INVESTOR</h1>
-        <p style={{ fontSize: "0.85rem", color: palette.textMuted, marginBottom: "1.5rem" }}>Logg inn med brukernavn og passord du har fått.</p>
-        <div style={{ marginBottom: "1rem" }}>
-          <label style={{ display: "block", fontSize: "0.75rem", color: palette.textMuted, marginBottom: "0.35rem" }}>Brukernavn</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            autoComplete="username"
-            style={{ width: "100%", padding: "0.6rem 0.75rem", background: palette.bgSection, border: `1px solid ${palette.border}`, borderRadius: 6, color: palette.text, fontSize: "0.95rem" }}
-          />
-        </div>
-        <div style={{ marginBottom: "1.25rem" }}>
-          <label style={{ display: "block", fontSize: "0.75rem", color: palette.textMuted, marginBottom: "0.35rem" }}>Passord</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoComplete="current-password"
-            style={{ width: "100%", padding: "0.6rem 0.75rem", background: palette.bgSection, border: `1px solid ${palette.border}`, borderRadius: 6, color: palette.text, fontSize: "0.95rem" }}
-          />
-        </div>
-        {error && <p style={{ color: "#e57373", fontSize: "0.8rem", marginBottom: "1rem" }}>{error}</p>}
-        <button type="submit" style={{ width: "100%", padding: "0.75rem", background: palette.accent, color: "#0a1612", border: "none", borderRadius: 6, fontSize: "0.9rem", fontWeight: 600, cursor: "pointer" }}>Logg inn</button>
-      </form>
-    </div>
-  );
-}
-
 export default function App() {
-  const [authenticated, setAuthenticated] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -110,10 +59,6 @@ export default function App() {
   }, []);
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-
-  if (!authenticated) {
-    return <LoginScreen onSuccess={() => setAuthenticated(true)} />;
-  }
 
   return (
     <div className="wyrify-app" style={{ background: palette.bg, color: palette.text, minHeight: "100vh", overflowX: "hidden" }}>
