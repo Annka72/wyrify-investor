@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
-// Enkel innlogging – endre til brukernavn/passord du sender til investorer
+// Midlertidig enkel auth – brukernavn/passord du sender til investorer (ingen lagring, må logge inn ved hver åpning)
 const INVESTOR_LOGIN = { username: "Wyrify", password: "Wyrify26" };
-const AUTH_KEY = "wyrify-investor-auth";
 
 // Ton-i-ton fargepalett (beholdt fra referanse) – brukes på Wyrify investor-prospektet
 const palette = {
@@ -62,7 +61,6 @@ function LoginScreen({ onSuccess }) {
     e.preventDefault();
     setError("");
     if (username === INVESTOR_LOGIN.username && password === INVESTOR_LOGIN.password) {
-      sessionStorage.setItem(AUTH_KEY, "1");
       onSuccess();
     } else {
       setError("Feil brukernavn eller passord.");
@@ -103,17 +101,7 @@ function LoginScreen({ onSuccess }) {
 
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
-  const [showApp, setShowApp] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-
-  // Først vis alltid innlogging; sjekk sessionStorage etter mount (så innhold ikke blitzer)
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (sessionStorage.getItem(AUTH_KEY) === "1") {
-      setAuthenticated(true);
-    }
-    setShowApp(true);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -123,9 +111,6 @@ export default function App() {
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
-  if (!showApp) {
-    return <div style={{ minHeight: "100vh", background: palette.bg }} />;
-  }
   if (!authenticated) {
     return <LoginScreen onSuccess={() => setAuthenticated(true)} />;
   }
