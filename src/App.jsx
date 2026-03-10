@@ -255,8 +255,8 @@ export default function App() {
             <p style={{ color: palette.textMuted, maxWidth: 620, lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Wyrify combines a Bluetooth BLE hardware beacon, mobile apps, and an online checkout solution — all running on a proprietary proof-of-stake blockchain with 1–2 second confirmation times.
             </p>
-            <div style={{ marginTop: "2rem", marginBottom: "3rem", textAlign: "center" }}>
-              <img src={beaconPaymentImg} alt="Wyrify beacon: to telefoner og beacon i betalingsflyt – request og confirm" style={{ maxWidth: "100%", width: "min(560px, 90vw)", height: "auto", borderRadius: 8, border: `1px solid ${palette.border}` }} />
+            <div style={{ marginTop: "2rem", marginBottom: "3rem", textAlign: "center", background: `linear-gradient(155deg, ${palette.bgCard} 0%, ${palette.bg} 60%, ${palette.bgSection} 100%)`, borderRadius: 0, isolation: "isolate" }}>
+              <img src={beaconPaymentImg} alt="Wyrify beacon: to telefoner og beacon i betalingsflyt – request og confirm" style={{ maxWidth: "100%", width: "min(560px, 90vw)", height: "auto", mixBlendMode: "screen", display: "block", margin: "0 auto" }} />
             </div>
           </Reveal>
 
