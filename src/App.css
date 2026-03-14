@@ -9,8 +9,20 @@
   font-family: inherit;
 }
 
-/* Mobil: navigasjon */
+/* ===== DESKTOP (769px+) ===== */
+@media (min-width: 769px) {
+  .wyrify-app .nav-mobile-toggle {
+    display: none !important;
+  }
+  .wyrify-app .nav-mobile-menu {
+    display: none !important;
+  }
+}
+
+/* ===== MOBIL (768px og under) ===== */
 @media (max-width: 768px) {
+
+  /* --- Navigasjon --- */
   .wyrify-app .nav-desktop-links {
     display: none !important;
   }
@@ -19,9 +31,6 @@
   }
   .wyrify-app .nav-wrap {
     padding: 0.75rem 1rem !important;
-  }
-  .wyrify-app .nav-brand .nav-ticker {
-    display: none;
   }
   .wyrify-app .nav-mobile-toggle {
     display: flex !important;
@@ -35,19 +44,14 @@
   .wyrify-app .nav-mobile-menu:not(.nav-mobile-menu--closed) {
     background: rgba(242, 247, 244, 0.98);
   }
-}
 
-@media (min-width: 769px) {
-  .wyrify-app .nav-mobile-toggle {
-    display: none !important;
+  /* --- Generell seksjon --- */
+  .wyrify-app section {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
-  .wyrify-app .nav-mobile-menu {
-    display: none !important;
-  }
-}
 
-/* Mobil: hero (første side) */
-@media (max-width: 768px) {
+  /* --- Hero --- */
   .wyrify-app .hero-section {
     padding: 5rem 1.25rem 3rem !important;
     min-height: auto !important;
@@ -58,14 +62,14 @@
     max-width: 100% !important;
   }
   .wyrify-app .hero-label {
-    font-size: 0.65rem !important;
-    letter-spacing: 0.15em;
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    justify-content: flex-start;
+    gap: 0.4rem;
   }
   .wyrify-app .hero-label .hero-label-line {
-    width: 16px !important;
+    width: 12px !important;
   }
   .wyrify-app .hero-title {
     font-size: clamp(2rem, 8vw, 2.75rem) !important;
@@ -73,46 +77,117 @@
     margin-bottom: 0.5rem !important;
   }
   .wyrify-app .hero-description {
-    font-size: 0.95rem !important;
+    font-size: 0.9rem !important;
     margin-top: 1.25rem !important;
     line-height: 1.6 !important;
   }
   .wyrify-app .hero-pills {
     margin-top: 1.5rem !important;
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
   }
   .wyrify-app .hero-pills .feature-pill {
-    font-size: 0.65rem !important;
-    padding: 0.35rem 0.75rem !important;
+    font-size: 0.6rem !important;
+    padding: 0.3rem 0.6rem !important;
   }
   .wyrify-app .hero-cta-wrap {
     flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1rem !important;
+    align-items: stretch !important;
+    gap: 0.75rem !important;
     margin-top: 2rem !important;
   }
   .wyrify-app .hero-cta-wrap button {
     width: 100%;
     padding: 0.9rem 1.5rem !important;
     font-size: 0.8rem !important;
+    text-align: center;
   }
   .wyrify-app .hero-beacon,
   .wyrify-app .hero-glow {
     display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
   }
   .wyrify-app .hero-section .hero-grid,
   .wyrify-app .hero-section .noise-overlay {
     display: none !important;
   }
+
+  /* --- Alle grids: 1 kolonne på mobil --- */
+  .wyrify-app .wyrify-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+
+  /* --- Investor/moat-boks: padding ned --- */
+  .wyrify-app .wyrify-grid[style*="padding: 2.5rem"] {
+    padding: 1.5rem !important;
+  }
+
+  /* --- Stat-kort --- */
+  .wyrify-app .stat-card {
+    padding: 1.5rem !important;
+  }
+
+  /* --- Team-kort --- */
+  .wyrify-app .team-card {
+    padding: 1.25rem !important;
+  }
+
+  /* --- Transaksjonsflyt: vertikal på mobil --- */
+  .wyrify-app .wyrify-flow {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  .wyrify-app .wyrify-flow > div[style*="width: 30"] {
+    transform: rotate(90deg);
+    margin: 0.25rem 0;
+  }
+
+  /* --- SVG-illustrasjoner: skalering --- */
+  .wyrify-app svg[viewBox="0 0 800 400"] {
+    max-width: 100% !important;
+  }
+  .wyrify-app svg[viewBox="0 0 800 500"] {
+    max-width: 100% !important;
+  }
+
+  /* --- Seksjonsoverskrifter --- */
+  .wyrify-app section h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* --- Footer --- */
+  .wyrify-app .wyrify-footer {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+    gap: 0.75rem !important;
+  }
+
+  /* --- CTA-knapper i footer --- */
+  .wyrify-app section > div[style*="display: flex"][style*="justify-content: center"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .wyrify-app section > div[style*="display: flex"][style*="justify-content: center"] > button,
+  .wyrify-app section > div[style*="display: flex"][style*="justify-content: center"] > div {
+    width: 100% !important;
+    text-align: center;
+  }
 }
 
-/* Mobil: generell seksjonspadding */
-@media (max-width: 768px) {
-  .wyrify-app section {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
+/* ===== EKSTRA LITEN MOBIL (420px og under) ===== */
+@media (max-width: 420px) {
+  .wyrify-app .hero-title {
+    font-size: 1.8rem !important;
+  }
+  .wyrify-app .hero-label {
+    font-size: 0.5rem !important;
+  }
+  .wyrify-app .stat-card {
+    padding: 1.25rem 1rem !important;
+  }
+  .wyrify-app .feature-pill {
+    font-size: 0.55rem !important;
+    padding: 0.25rem 0.5rem !important;
   }
 }

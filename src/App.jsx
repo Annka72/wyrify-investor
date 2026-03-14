@@ -217,7 +217,7 @@ export default function App() {
 
       {/* KEY STATS */}
       <section style={{ padding: "5rem 5vw", background: palette.bg }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem", maxWidth: 1100, margin: "0 auto" }}>
+        <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1.5rem", maxWidth: 1100, margin: "0 auto" }}>
           {[
             { value: "3 mrd+", label: "Mennesker uten tilgang til banktjenester globalt", sub: "MÅLGRUPPE" },
             { value: "60M+", label: "POS-terminaler kontrollert av kun to selskaper", sub: "Verifone + Ingenico" },
@@ -267,7 +267,7 @@ export default function App() {
               Dagens betalingsinfrastruktur er sentralisert, dyr og ekskluderende. Milliarder av mennesker er utestengt fra det globale økonomiske systemet, og selv de som har tilgang betaler overpris for trege tjenester.
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+          <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
             {[
               { icon: "🏦", title: "Kortmonopolet", body: "VISA og Mastercard kontrollerer over 90 % av alle POS-terminaler gjennom Verifone og Ingenico. Gebyrene er høye (ofte 3 %+), oppgjøret tar dager, og tilbakebetalinger (chargebacks) koster butikkene milliarder hvert år. Systemet er designet for kortutstedernes profitt — ikke for forbrukerne eller selgerne." },
               { icon: "🌍", title: "Global ekskludering", body: "Over tre milliarder mennesker har ingen bankkonto, og dermed ingen mulighet til å delta i digital økonomi. Tradisjonelle betalingssystemer krever bankforbindelse, kredittvurdering og fysisk infrastruktur som ikke finnes i store deler av verden. Disse menneskene er låst ute — ikke fordi teknologien ikke finnes, men fordi den aldri ble laget for dem." },
@@ -304,7 +304,7 @@ export default function App() {
             </div>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "4rem" }}>
+          <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "4rem" }}>
             {[
               { num: "01", title: "Wyrify Beacon", subtitle: "POS-hardware", desc: "En Bluetooth Low Energy-terminal som erstatter tradisjonelle kortlesere fullstendig. Forhandlere mottar beaconen gratis og betaler kun 0,5 % per transaksjon. Kunder betaler via Wyrify-appen — uten kort, uten bank, uten nettforbindelse. Beaconen kommuniserer direkte med kundens telefon over BLE, og transaksjonen bekreftes på 1–2 sekunder. Selv uten internett gjennomføres betalingen trygt, og synkroniseres til blokkjeden når tilkobling gjenopprettes.", features: ["BLE / NFC — fungerer offline", "Umiddelbart oppgjør", "Alle kryptovalutaer akseptert", "Null risiko for tilbakebetaling"], color: palette.accent },
               { num: "02", title: "Wyrify App", subtitle: "Kunde & forhandler", desc: "En mobil lommebok som støtter alle kryptovalutaer og fiat-valutaer. Kunder kan holde, veksle og bruke digitale verdier hos enhver Wyrify-tilkoblet forhandler. Forhandlere får bekreftelse på sekunder, med verdi låst umiddelbart. Appen inkluderer innebygd KYC/UBO-verifisering og et komplett dashbord for transaksjonshistorikk og rapportering.", features: ["Flervaluta-lommebok", "Betal med ett klikk", "Forhandler-dashbord", "Innebygd KYC / UBO"], color: palette.seafoam },
@@ -332,7 +332,7 @@ export default function App() {
           <Reveal>
             <div style={{ background: palette.bgCard, border: `1px solid ${palette.border}`, borderRadius: "4px", padding: "2.5rem" }}>
               <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.7rem", color: palette.accentDim, letterSpacing: "0.15em", marginBottom: "2rem", textAlign: "center" }}>TRANSAKSJONSFLYT</div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", flexWrap: "wrap" }}>
+              <div className="wyrify-flow" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "0", flexWrap: "wrap" }}>
                 {[
                   { label: "Kunde", sub: "App / Lommebok", icon: "📱" },
                   null,
@@ -384,7 +384,7 @@ export default function App() {
             </p>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+          <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
             {[
               { icon: "🌍", title: "Befolkning uten banktjenester", urgency: 95, desc: "Over tre milliarder mennesker mangler grunnleggende finansielle tjenester. Med Wyrify kan enhver forhandler bli et bankpunkt. Vår agentmodell muliggjør person-til-person-transaksjoner, mikrolån og sparing — alt via en mobiltelefon og en beacon, uten behov for bankkonto eller internettforbindelse.", pilot: "Dialog med afrikanske myndigheter", color: palette.accent },
               { icon: "💊", title: "Farmasøytisk industri", urgency: 85, desc: "Kontrollerte substanser krever spesialisert betalingshåndtering med strenge krav til sporbarhet og compliance. Wyrify sin blokkjedeverifiserte, umiddelbare oppgjørsløsning gir farmasøytiske forhandlere den kombinasjonen av etterlevelse, sikkerhet og hastighet de trenger for å operere effektivt.", pilot: "20+ signerte kontrakter", color: palette.tealBright },
@@ -429,7 +429,7 @@ export default function App() {
             </h2>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start", marginTop: "3rem" }}>
+          <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start", marginTop: "3rem" }}>
             <div>
               {[
                 { label: "Proof-of-Stake-protokoll", icon: "⛓", desc: "Blackcoin-basert PoS-nodenettverk med dynamisk sekvensering. Eliminerer energikrevende mining, og sikrer raske, sikre transaksjoner med lavt strømforbruk. Nettverket er desentralisert og skalerbart." },
@@ -503,7 +503,7 @@ export default function App() {
               Wyrify genererer inntekter fra hver transaksjon, hver valutaveksling og hver integrasjon. Modellen er designet for å skalere globalt med minimale marginalkostnader.
             </p>
           </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
+          <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "1.5rem" }}>
             {[
               { stream: "Transaksjonsgebyrer", rate: "0,5 % – 5 %+", note: "Grunngebyr på 0,5 % for standardforhandlere, opptil 5 %+ for høyrisikobransjer. Over 50 % billigere enn tradisjonelle kortgebyrer — og med umiddelbart oppgjør inkludert.", icon: "💸" },
               { stream: "Valutaveksling", rate: "Valutaspread", note: "Inntekter på krypto-til-fiat og fiat-til-krypto-konverteringer via den integrerte vekslingsplattformen. Hver transaksjon som krysser valutagrenser genererer spread-inntekt.", icon: "💱" },
@@ -523,7 +523,7 @@ export default function App() {
           </div>
 
           <Reveal delay={0.2}>
-            <div style={{ marginTop: "3rem", background: palette.bgCard, border: `1px solid ${palette.border}`, borderRadius: "4px", padding: "2.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+            <div className="wyrify-grid" style={{ marginTop: "3rem", background: palette.bgCard, border: `1px solid ${palette.border}`, borderRadius: "4px", padding: "2.5rem", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
               <div>
                 <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.4rem", color: palette.textBright, marginBottom: "1rem" }}>Investorløp</h3>
                 <p style={{ color: palette.textMuted, fontSize: "0.88rem", lineHeight: 1.7 }}>
@@ -568,7 +568,7 @@ export default function App() {
             </p>
           </Reveal>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
+          <div className="wyrify-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.25rem" }}>
             {[
               { name: "Henrik Onarheim", role: "CEO & oppfinner", detail: "Oppfinner av Wyrify-plattformen og NXChain-teknologien. Designet blokkjedens transaksjonslag sammen med Thomas Wong. Har ledet prosjektet fra idé til fungerende prototyp og internasjonale pilotprosjekter.", flag: "🇬🇧" },
               { name: "Thomas Wong", role: "Kryptologisjef", detail: "Sikkerhetsekspert, foreleser og kryptograf. Har bygget hele NXChain-blokkjedeplattformen og Wyrify sine primære teknologiske ryggrader. Spesialist på kryptografisk protokolldesign og sikker transaksjonshåndtering.", flag: "🔐" },
@@ -627,7 +627,7 @@ export default function App() {
           <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: palette.textMuted, letterSpacing: "0.08em" }}>SKANN FOR Å DELE</span>
         </div>
 
-        <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: `1px solid ${palette.border}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+        <div className="wyrify-footer" style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: `1px solid ${palette.border}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <svg viewBox="0 0 28 28" fill="none" width="22" height="22">
               <path d="M4,5 C4,14 7.5,17 11,17 C14.5,17 14.5,14 14.5,10" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
