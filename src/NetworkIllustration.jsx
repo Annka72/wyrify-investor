@@ -1,18 +1,18 @@
 import translations from "./translations.js";
 
 const p = {
-  bg: "#F2F7F4",
-  accent: "#289A85",
-  teal: "#289A85",
-  tealBright: "#1E8C74",
-  border: "#D0DDD7",
-  text: "#2D3B36",
-  textMuted: "#6B7F78",
-  light: "#E8F0EC",
-  chain: "#2D3B36",
-  chainLight: "#6B7F78",
-  flow: "#34A890",
-  bgCard: "#FFFFFF",
+  bg: "#1B2A2E",
+  accent: "#4DB897",
+  teal: "#4DB897",
+  tealBright: "#5CCAA6",
+  border: "#2E4245",
+  text: "#C8D5D0",
+  textMuted: "#8A9E97",
+  light: "#192527",
+  chain: "#8A9E97",
+  chainLight: "#6B8A82",
+  flow: "#4DB897",
+  bgCard: "#223538",
 };
 
 /* En enkelt kjedelenke (X-form) */

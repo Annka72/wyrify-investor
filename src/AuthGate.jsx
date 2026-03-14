@@ -4,12 +4,12 @@ import { useState, Suspense, lazy } from "react";
 const INVESTOR_LOGIN = { username: "Wyrify", password: "Wyrify26" };
 
 const styles = {
-  bg: "#F2F7F4",
-  bgCard: "#FFFFFF",
-  border: "#D0DDD7",
-  text: "#2D3B36",
-  textMuted: "#6B7F78",
-  accent: "#289A85",
+  bg: "#1B2A2E",
+  bgCard: "#223538",
+  border: "#2E4245",
+  text: "#C8D5D0",
+  textMuted: "#8A9E97",
+  accent: "#4DB897",
 };
 
 // Investor-appen lastes først ETTER innlogging (ikke med første sidevisning)
@@ -61,7 +61,7 @@ export default function AuthGate() {
             onChange={(e) => setUsername(e.target.value)}
             autoComplete="username"
             required
-            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#F2F7F4", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
+            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#192527", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
           />
         </div>
         <div style={{ marginBottom: "1.25rem" }}>
@@ -72,7 +72,7 @@ export default function AuthGate() {
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
             required
-            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#F2F7F4", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
+            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#192527", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
           />
         </div>
         <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", cursor: "pointer", fontSize: "0.8rem", color: styles.textMuted }}>

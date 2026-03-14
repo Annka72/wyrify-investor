@@ -1,15 +1,15 @@
 import translations from "./translations.js";
 
 const palette = {
-  bg: "#F2F7F4",
-  bgCard: "#FFFFFF",
-  teal: "#289A85",
-  tealBright: "#1E8C74",
-  accent: "#289A85",
-  border: "#D0DDD7",
-  text: "#2D3B36",
-  textMuted: "#6B7F78",
-  light: "#E8F0EC",
+  bg: "#1B2A2E",
+  bgCard: "#223538",
+  teal: "#4DB897",
+  tealBright: "#5CCAA6",
+  accent: "#4DB897",
+  border: "#2E4245",
+  text: "#C8D5D0",
+  textMuted: "#8A9E97",
+  light: "#192527",
 };
 
 export default function BeaconIllustration({ lang = "no" }) {

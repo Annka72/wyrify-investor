@@ -5,26 +5,26 @@ import BeaconIllustration from "./BeaconIllustration.jsx";
 import NetworkIllustration from "./NetworkIllustration.jsx";
 import translations from "./translations.js";
 
-// Puddergrønn fargepalett – lys, luftig og elegant
+// Mørk blågrønn palett – inspirert av midlaier.no
 const palette = {
-  bg: "#F2F7F4",
-  bgCard: "#FFFFFF",
-  bgSection: "#E8F0EC",
-  teal: "#289A85",
-  tealLight: "#30BFA0",
-  tealBright: "#1E8C74",
-  seafoam: "#1E8C74",
-  metalDark: "#F5FAF7",
-  accent: "#289A85",
-  accentDim: "#34A890",
-  border: "#D0DDD7",
-  text: "#2D3B36",
-  textMuted: "#6B7F78",
-  textBright: "#1A2E28",
-  gold: "#3D8B7A",
-  gradBlue: "#F2F7F4",
-  gradTeal: "#F2F7F4",
-  gradMid: "#F2F7F4",
+  bg: "#1B2A2E",
+  bgCard: "#223538",
+  bgSection: "#192527",
+  teal: "#4DB897",
+  tealLight: "#5CCAA6",
+  tealBright: "#5CCAA6",
+  seafoam: "#5CCAA6",
+  metalDark: "#162123",
+  accent: "#4DB897",
+  accentDim: "#3EA384",
+  border: "#2E4245",
+  text: "#C8D5D0",
+  textMuted: "#8A9E97",
+  textBright: "#E4EBE8",
+  gold: "#4DB897",
+  gradBlue: "#1B2A2E",
+  gradTeal: "#192527",
+  gradMid: "#1E2F32",
 };
 
 const useInView = (threshold = 0.15) => {
