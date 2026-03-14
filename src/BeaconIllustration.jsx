@@ -1,3 +1,5 @@
+import translations from "./translations.js";
+
 const palette = {
   bg: "#F2F7F4",
   bgCard: "#FFFFFF",
@@ -10,7 +12,9 @@ const palette = {
   light: "#E8F0EC",
 };
 
-export default function BeaconIllustration() {
+export default function BeaconIllustration({ lang = "no" }) {
+  const il = translations[lang].illustrations;
+
   return (
     <svg viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", maxWidth: 680, height: "auto", display: "block", margin: "0 auto" }}>
       <defs>
@@ -66,7 +70,7 @@ export default function BeaconIllustration() {
         <circle cx="80" cy="80" r="16" fill={palette.accent} fillOpacity="0.12" stroke={palette.accent} strokeWidth="1.5" />
         <text x="80" y="85" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" fill={palette.accent}>W</text>
 
-        <text x="80" y="118" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" fill={palette.textMuted} letterSpacing="0.1em">FORHANDLER</text>
+        <text x="80" y="118" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" fill={palette.textMuted} letterSpacing="0.1em">{il.merchant}</text>
 
         {/* Beløp */}
         <text x="80" y="160" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="32" fontWeight="300" fill={palette.text}>10.00</text>
@@ -74,7 +78,7 @@ export default function BeaconIllustration() {
 
         {/* Send-knapp */}
         <rect x="30" y="200" width="100" height="34" rx="17" fill={palette.accent} />
-        <text x="80" y="221" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" fill="#FFFFFF" letterSpacing="0.05em">Send</text>
+        <text x="80" y="221" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" fill="#FFFFFF" letterSpacing="0.05em">{il.send}</text>
 
         {/* Status-indikator */}
         <circle cx="80" cy="250" r="3" fill={palette.accent} opacity="0.6">
@@ -127,7 +131,7 @@ export default function BeaconIllustration() {
         </ellipse>
 
         {/* Label under beacon */}
-        <text x="60" y="102" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" fill={palette.textMuted} letterSpacing="0.15em">BEACON</text>
+        <text x="60" y="102" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" fill={palette.textMuted} letterSpacing="0.15em">{il.beacon}</text>
       </g>
 
       {/* === BLE-SIGNAL BEACON → HØYRE === */}
@@ -159,7 +163,7 @@ export default function BeaconIllustration() {
         <circle cx="80" cy="80" r="16" fill={palette.tealBright} fillOpacity="0.12" stroke={palette.tealBright} strokeWidth="1.5" />
         <text x="80" y="85" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="14" fontWeight="700" fill={palette.tealBright}>W</text>
 
-        <text x="80" y="118" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" fill={palette.textMuted} letterSpacing="0.1em">KUNDE</text>
+        <text x="80" y="118" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9" fill={palette.textMuted} letterSpacing="0.1em">{il.customer}</text>
 
         {/* Beløp */}
         <text x="80" y="160" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="32" fontWeight="300" fill={palette.text}>10.00</text>
@@ -167,7 +171,7 @@ export default function BeaconIllustration() {
 
         {/* Bekreft-knapp */}
         <rect x="30" y="200" width="100" height="34" rx="17" fill={palette.tealBright} />
-        <text x="80" y="221" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" fill="#FFFFFF" letterSpacing="0.05em">Bekreft</text>
+        <text x="80" y="221" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="600" fill="#FFFFFF" letterSpacing="0.05em">{il.confirm}</text>
 
         {/* Hake-animasjon */}
         <g transform="translate(68, 242)">
@@ -186,9 +190,9 @@ export default function BeaconIllustration() {
         <line x1="0" y1="0" x2="320" y2="0" stroke={palette.border} strokeWidth="1" />
         <polygon points="316,-4 324,0 316,4" fill={palette.accent} />
 
-        <text x="60" y="20" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={palette.textMuted} letterSpacing="0.1em">BLE</text>
-        <text x="160" y="20" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={palette.accent} letterSpacing="0.1em">1–2 sek</text>
-        <text x="260" y="20" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={palette.textMuted} letterSpacing="0.1em">BLE</text>
+        <text x="60" y="20" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={palette.textMuted} letterSpacing="0.1em">{il.ble}</text>
+        <text x="160" y="20" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={palette.accent} letterSpacing="0.1em">{il.transactionTime}</text>
+        <text x="260" y="20" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={palette.textMuted} letterSpacing="0.1em">{il.ble}</text>
       </g>
     </svg>
   );

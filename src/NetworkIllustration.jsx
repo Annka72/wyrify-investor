@@ -1,3 +1,5 @@
+import translations from "./translations.js";
+
 const p = {
   bg: "#F2F7F4",
   accent: "#289A85",
@@ -10,9 +12,10 @@ const p = {
   chain: "#2D3B36",
   chainLight: "#6B7F78",
   flow: "#34A890",
+  bgCard: "#FFFFFF",
 };
 
-/* Én enkelt kjedelenke (X-form) */
+/* En enkelt kjedelenke (X-form) */
 const ChainLink = ({ x, y, rotation = 0, scale = 1 }) => (
   <g transform={`translate(${x}, ${y}) rotate(${rotation}) scale(${scale})`}>
     <ellipse rx="8" ry="5" fill="none" stroke={p.chain} strokeWidth="2.2" />
@@ -90,7 +93,9 @@ const Phone = ({ x, y, label }) => (
   </g>
 );
 
-export default function NetworkIllustration() {
+export default function NetworkIllustration({ lang = "no" }) {
+  const il = translations[lang].illustrations;
+
   // Posisjoner for de fire nodene (trekant + bunn)
   const cloud = { x: 400, y: 65 };
   const merchant = { x: 130, y: 290 };
@@ -112,14 +117,14 @@ export default function NetworkIllustration() {
       </defs>
 
       {/* === ANIMERTE KJEDER === */}
-      {/* Sky → Forhandler */}
+      {/* Sky -> Forhandler */}
       <AnimatedChain x1={cloud.x - 30} y1={cloud.y + 40} x2={merchant.x + 40} y2={merchant.y - 50} id="chain1" delay={0} />
-      {/* Sky → Kunde */}
+      {/* Sky -> Kunde */}
       <AnimatedChain x1={cloud.x + 30} y1={cloud.y + 40} x2={customer.x - 40} y2={customer.y - 50} id="chain2" delay={0.8} />
-      {/* Forhandler → Kunde (horisontal) */}
+      {/* Forhandler -> Kunde (horisontal) */}
       <AnimatedChain x1={merchant.x + 55} y1={merchant.y} x2={customer.x - 55} y2={customer.y} id="chain3" delay={0.4} />
 
-      {/* === BUEDE FLYT-PILER (forhandler ↔ betaling ↔ kunde) === */}
+      {/* === BUEDE FLYT-PILER (forhandler <-> betaling <-> kunde) === */}
       <path d={`M${merchant.x + 20},${merchant.y + 40} Q${merchant.x + 60},${payment.y + 10} ${payment.x - 40},${payment.y}`}
         stroke={p.flow} strokeWidth="2" fill="none" strokeDasharray="6,4" opacity="0.5">
         <animate attributeName="stroke-dashoffset" values="0;-20" dur="1.5s" repeatCount="indefinite" />
@@ -151,7 +156,7 @@ export default function NetworkIllustration() {
         </ellipse>
 
         {/* Label */}
-        <text x="0" y="55" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9.5" fill={p.textMuted} letterSpacing="0.08em">KRYPTO-NODENETTVERK</text>
+        <text x="0" y="55" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="9.5" fill={p.textMuted} letterSpacing="0.08em">{il.cryptoNetwork}</text>
       </g>
 
       {/* === FORHANDLER (venstre) === */}
@@ -173,11 +178,11 @@ export default function NetworkIllustration() {
         </g>
 
         {/* Label */}
-        <text x="0" y="42" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fill={p.accent} fontWeight="600" letterSpacing="0.12em">FORHANDLER</text>
+        <text x="0" y="42" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fill={p.accent} fontWeight="600" letterSpacing="0.12em">{il.merchant}</text>
       </g>
 
       {/* === KUNDENS MOBILTELEFON (høyre) === */}
-      <Phone x={customer.x} y={customer.y} label="KUNDENS MOBIL" />
+      <Phone x={customer.x} y={customer.y} label={il.customerMobile} />
 
       {/* === BETALING / LOMMEBOK (bunn) === */}
       <g transform={`translate(${payment.x}, ${payment.y})`}>
@@ -198,22 +203,22 @@ export default function NetworkIllustration() {
         </g>
 
         {/* Label */}
-        <text x="0" y="55" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fill={p.textMuted} letterSpacing="0.08em">DIGITAL LOMMEBOK</text>
+        <text x="0" y="55" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="10" fill={p.textMuted} letterSpacing="0.08em">{il.digitalWallet}</text>
       </g>
 
       {/* === FORKLARENDE TEKSTER === */}
       <g>
-        {/* Ved kjede sky→forhandler */}
+        {/* Ved kjede sky->forhandler */}
         <text x="225" y="155" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={p.textMuted} transform="rotate(-35, 225, 155)">
-          blokkjede
+          {il.blockchain}
         </text>
-        {/* Ved kjede sky→kunde */}
+        {/* Ved kjede sky->kunde */}
         <text x="575" y="155" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={p.textMuted} transform="rotate(35, 575, 155)">
-          blokkjede
+          {il.blockchain}
         </text>
         {/* Ved horisontal kjede */}
         <text x="400" y="278" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="8" fill={p.textMuted}>
-          sikker transaksjon
+          {il.secureTransaction}
         </text>
       </g>
     </svg>
