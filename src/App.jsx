@@ -128,9 +128,9 @@ export default function App() {
         <div className="nav-brand" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <div style={{ width: 28, height: 28, position: "relative" }}>
             <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "100%" }}>
-              <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke={palette.accent} strokeWidth="1.5"/>
-              <polygon points="14,6 22,10 22,18 14,22 6,18 6,10" fill={palette.teal + "33"} stroke={palette.tealBright} strokeWidth="1"/>
-              <circle cx="14" cy="14" r="3" fill={palette.accent}/>
+              <path d="M4,5 C4,14 7.5,17 11,17 C14.5,17 14.5,14 14.5,10" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <path d="M12,6 C12,14 15.5,17 19,17 C22.5,17 24,14 24,10" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <path d="M24,10 C24,15 24,22 19,25" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
             </svg>
           </div>
           <span style={{ fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.95rem", color: palette.textBright, letterSpacing: "0.15em" }}>WYRIFY</span>
@@ -171,9 +171,9 @@ export default function App() {
           ))}
           <div style={{ width: 80, height: 80, borderRadius: "50%", background: `linear-gradient(135deg, ${palette.teal}, ${palette.tealBright})`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 30px ${palette.accent}33, 0 0 60px ${palette.teal}22` }}>
             <svg viewBox="0 0 40 40" fill="none" width="42" height="42">
-              <circle cx="20" cy="20" r="8" fill={palette.bgCard}/>
-              <path d="M20 5 L35 12 L35 28 L20 35 L5 28 L5 12 Z" stroke={palette.bgCard} strokeWidth="1.5" fill="none"/>
-              <circle cx="20" cy="20" r="3" fill={palette.bgCard}/>
+              <path d="M6,8 C6,20 11,25 16,25 C21,25 21,20 21,15" stroke={palette.bgCard} strokeWidth="2.8" strokeLinecap="round" fill="none"/>
+              <path d="M17,10 C17,20 22,25 27,25 C32,25 34,20 34,15" stroke={palette.bgCard} strokeWidth="2.8" strokeLinecap="round" fill="none"/>
+              <path d="M34,15 C34,22 34,32 27,36" stroke={palette.bgCard} strokeWidth="2.8" strokeLinecap="round" fill="none"/>
             </svg>
           </div>
         </div>
@@ -605,8 +605,9 @@ export default function App() {
         <div style={{ marginTop: "6rem", paddingTop: "3rem", borderTop: `1px solid ${palette.border}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <svg viewBox="0 0 28 28" fill="none" width="22" height="22">
-              <polygon points="14,2 26,8 26,20 14,26 2,20 2,8" fill="none" stroke={palette.accent} strokeWidth="1.5"/>
-              <circle cx="14" cy="14" r="3" fill={palette.accent}/>
+              <path d="M4,5 C4,14 7.5,17 11,17 C14.5,17 14.5,14 14.5,10" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <path d="M12,6 C12,14 15.5,17 19,17 C22.5,17 24,14 24,10" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
+              <path d="M24,10 C24,15 24,22 19,25" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
             </svg>
             <span style={{ fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.85rem", color: palette.textBright }}>WYRIFY</span>
           </div>
