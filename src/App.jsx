@@ -135,7 +135,6 @@ export default function App() {
             </svg>
           </div>
           <span style={{ fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.95rem", color: palette.textBright, letterSpacing: "0.15em" }}>WYRIFY</span>
-          <span className="ticker nav-ticker">WYR</span>
         </div>
         <div className="nav-desktop-links" style={{ display: "flex", gap: "2rem" }}>
           {NAV_ITEMS.map((n) => (
