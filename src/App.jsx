@@ -571,13 +571,6 @@ export default function App() {
             {[
               { name: "Henrik Onarheim", role: "CEO & oppfinner", detail: "Oppfinner av Wyrify-plattformen og NXChain-teknologien. Designet blokkjedens transaksjonslag sammen med Thomas Wong. Har ledet prosjektet fra idé til fungerende prototyp og internasjonale pilotprosjekter.", flag: "🇬🇧" },
               { name: "Thomas Wong", role: "Kryptologisjef", detail: "Sikkerhetsekspert, foreleser og kryptograf. Har bygget hele NXChain-blokkjedeplattformen og Wyrify sine primære teknologiske ryggrader. Spesialist på kryptografisk protokolldesign og sikker transaksjonshåndtering.", flag: "🔐" },
-              { name: "Kenneth Olin", role: "COO", detail: "Tidligere operasjonell bankleder med bred teknisk erfaring. Involvert i Wyrify-utviklingen fra starten, med ansvar for drift, compliance og forretningslogikk.", flag: "🏦" },
-              { name: "Dan Sokol", role: "Sjefstrategirådgiver", detail: "Mangeårig teknisk rådgiver for Apple-medgründer Steve Wozniak. Sjelden kombinasjon av ekspertise innen betalingsmaskinvare, forbrukerelektronikk og blokkjedeteknologi.", flag: "🍎" },
-              { name: "Erik Gravgaard", role: "Styreleder / juridisk", detail: "Selskaps- og forretningsjurist med spesialisering innen nettbaserte virksomheter og regulatoriske rammeverk. Juridisk rådgiver for Wyrify-prosjektet siden 2013.", flag: "⚖️" },
-              { name: "Wilhelm Castberg", role: "Maskinvarerådgiver", detail: "Direktør i Atea (ATEA:OSE). Har bygget noen av Skandinavias største IT-megler-teknologiplattformer. Involvert i prosjektet siden 2013, med ekspertise innen maskinvaredistribusjon og enterprise IT.", flag: "🇳🇴" },
-              { name: "Sean Tabatabai", role: "CEO NXChain", detail: "CEO for NXChain (NXCN:QB), det første børsnoterte digitale valuta/blokkjedeselskapet. Spesialist på regulatoriske rammeverk og markedstilgang i det amerikanske markedet.", flag: "📊" },
-              { name: "Erik Eklund", role: "Salgssjef, USA", detail: "Har hentet inn hoveddelen av Wyrify sine amerikanske beta-kunder siden 2014. Administrerer en pipeline som spenner over millioner av potensielle brukere på tvers av flere industrisegmenter.", flag: "🇺🇸" },
-              { name: "Anisa Budharacha", role: "Salg Asia / Midtøsten", detail: "Nøkkelkontakt i ASEAN og Midtøsten, med dekning av bank, forsikring og offentlige registertjenester. Primær døråpner i Asia med et bredt nettverk av beslutningstakere.", flag: "🌏" },
             ].map((member, i) => (
               <Reveal key={member.name} delay={i * 0.08}>
                 <div className="team-card">
