@@ -17,16 +17,23 @@ const App = lazy(() => import("./App.jsx"));
 const AUTH_KEY = "wyrify_investor_auth";
 
 export default function AuthGate() {
-  const [authenticated, setAuthenticated] = useState(() => typeof window !== "undefined" && sessionStorage.getItem(AUTH_KEY) === "1");
+  const [authenticated, setAuthenticated] = useState(() => typeof window !== "undefined" && (localStorage.getItem(AUTH_KEY) === "1" || sessionStorage.getItem(AUTH_KEY) === "1"));
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
     if (username === INVESTOR_LOGIN.username && password === INVESTOR_LOGIN.password) {
-      if (typeof window !== "undefined") sessionStorage.setItem(AUTH_KEY, "1");
+      if (typeof window !== "undefined") {
+        if (remember) {
+          localStorage.setItem(AUTH_KEY, "1");
+        } else {
+          sessionStorage.setItem(AUTH_KEY, "1");
+        }
+      }
       setAuthenticated(true);
     } else {
       setError("Feil brukernavn eller passord.");
@@ -68,6 +75,10 @@ export default function AuthGate() {
             style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#F2F7F4", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
           />
         </div>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem", cursor: "pointer", fontSize: "0.8rem", color: styles.textMuted }}>
+          <input type="checkbox" checked={remember} onChange={(e) => setRemember(e.target.checked)} style={{ accentColor: styles.accent, cursor: "pointer" }} />
+          Husk meg
+        </label>
         {error && <p style={{ color: "#e57373", fontSize: "0.8rem", marginBottom: "1rem" }}>{error}</p>}
         <button type="submit" style={{ width: "100%", padding: "0.75rem", background: styles.accent, color: "#FFFFFF", border: "none", borderRadius: 6, fontSize: "0.9rem", fontWeight: 600, cursor: "pointer" }}>Logg inn</button>
       </form>
