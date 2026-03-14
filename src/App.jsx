@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import BeaconIllustration from "./BeaconIllustration.jsx";
+import NetworkIllustration from "./NetworkIllustration.jsx";
 
 // Puddergrønn fargepalett – lys, luftig og elegant
 const palette = {
@@ -232,6 +233,23 @@ export default function App() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <div className="section-divider"/>
+
+      {/* NETWORK ILLUSTRATION */}
+      <section style={{ padding: "5rem 5vw", background: palette.bgSection }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <Reveal>
+            <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.7rem", color: palette.accentDim, letterSpacing: "0.2em", marginBottom: "1rem", textAlign: "center" }}>SLIK FUNGERER DET</div>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 300, color: palette.textBright, marginBottom: "2.5rem", textAlign: "center" }}>
+              Fra forhandler til kunde,<br/><span style={{ fontStyle: "italic", color: palette.seafoam }}>via blokkjeden</span>
+            </h2>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <NetworkIllustration />
+          </Reveal>
         </div>
       </section>
 
