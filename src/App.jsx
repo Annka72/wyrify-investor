@@ -154,7 +154,7 @@ export default function App() {
         </button>
         <div className={`nav-mobile-menu ${mobileMenuOpen ? "" : "nav-mobile-menu--closed"}`} style={{ width: "100%", flexDirection: "column", gap: "0.75rem", paddingTop: "1rem", borderTop: `1px solid ${palette.border}` }}>
           {NAV_ITEMS.map((n) => (
-            <span key={n} className="nav-link" style={{ padding: "0.5rem 0", fontSize: "0.85rem" }} onClick={() => scrollTo(n.toLowerCase())}>{n}</span>
+            <span key={n.id} className="nav-link" style={{ padding: "0.5rem 0", fontSize: "0.85rem" }} onClick={() => scrollTo(n.id)}>{n.label}</span>
           ))}
         </div>
       </nav>
