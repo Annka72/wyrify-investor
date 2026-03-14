@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
-import beaconPaymentImg from "./assets/beacon-payment.png";
+import BeaconIllustration from "./BeaconIllustration.jsx";
 
 // Puddergrønn fargepalett – lys, luftig og elegant
 const palette = {
@@ -281,8 +281,8 @@ export default function App() {
             <p style={{ color: palette.textMuted, maxWidth: 620, lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Wyrify kombinerer en Bluetooth BLE-basert hardware-beacon, mobilapper for kunder og forhandlere, og en online betalingsløsning — alt drevet av en proprietær proof-of-stake-blokkjede med 1–2 sekunders bekreftelsestid. Plattformen fungerer offline, uten bankkort og uten avhengighet av VISA eller Mastercard.
             </p>
-            <div style={{ marginTop: "2rem", marginBottom: "3rem", textAlign: "center", background: palette.bgSection, borderRadius: 0, isolation: "isolate" }}>
-              <img src={beaconPaymentImg} alt="Wyrify beacon: to telefoner og beacon i betalingsflyt – request og confirm" style={{ maxWidth: "100%", width: "min(560px, 90vw)", height: "auto", mixBlendMode: "multiply", display: "block", margin: "0 auto" }} />
+            <div style={{ marginTop: "2rem", marginBottom: "3rem" }}>
+              <BeaconIllustration />
             </div>
           </Reveal>
 
