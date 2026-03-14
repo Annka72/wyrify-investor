@@ -206,7 +206,7 @@ export default function App() {
               UTFORSK PLATTFORMEN →
             </button>
             <button onClick={() => setModal("whitepaper")} style={{ background: "none", border: `1px solid ${palette.border}`, padding: "0.85rem 2.5rem", fontFamily: "'Space Mono', monospace", fontSize: "0.75rem", letterSpacing: "0.1em", cursor: "pointer", borderRadius: "6px", color: palette.textMuted }}>
-              HVITBOK
+              WHITEPAPER
             </button>
           </div>
         </div>
@@ -638,7 +638,7 @@ export default function App() {
       </section>
 
       {/* MODALER */}
-      <Modal open={modal === "whitepaper"} onClose={() => setModal(null)} title="Wyrify — Hvitbok">
+      <Modal open={modal === "whitepaper"} onClose={() => setModal(null)} title="Wyrify — Whitepaper">
         <p><strong>Wyrify — Fremtidens betalingsinfrastruktur</strong></p>
         <p>Wyrify er en komplett betalingsplattform som erstatter tradisjonelle kortterminaler med Bluetooth-basert beacon-teknologi. Plattformen fungerer uavhengig av VISA, Mastercard og bankinfrastruktur.</p>
         <p style={{ marginTop: "1rem" }}><strong>Nøkkelprinsipper:</strong></p>
