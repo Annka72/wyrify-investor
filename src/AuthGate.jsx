@@ -4,12 +4,12 @@ import { useState, Suspense, lazy } from "react";
 const INVESTOR_LOGIN = { username: "Wyrify", password: "Wyrify26" };
 
 const styles = {
-  bg: "#1D2C2A",
-  bgCard: "#243835",
-  border: "#2B3B39",
-  text: "#E0E0E0",
-  textMuted: "#A0A0A0",
-  accent: "#34D4B8",
+  bg: "#F2F7F4",
+  bgCard: "#FFFFFF",
+  border: "#D0DDD7",
+  text: "#2D3B36",
+  textMuted: "#6B7F78",
+  accent: "#289A85",
 };
 
 // Investor-appen lastes først ETTER innlogging (ikke med første sidevisning)
@@ -54,7 +54,7 @@ export default function AuthGate() {
             onChange={(e) => setUsername(e.target.value)}
             autoComplete="username"
             required
-            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#1A2826", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
+            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#F2F7F4", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
           />
         </div>
         <div style={{ marginBottom: "1.25rem" }}>
@@ -65,11 +65,11 @@ export default function AuthGate() {
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
             required
-            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#1A2826", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
+            style={{ width: "100%", padding: "0.6rem 0.75rem", background: "#F2F7F4", border: `1px solid ${styles.border}`, borderRadius: 6, color: styles.text, fontSize: "0.95rem" }}
           />
         </div>
         {error && <p style={{ color: "#e57373", fontSize: "0.8rem", marginBottom: "1rem" }}>{error}</p>}
-        <button type="submit" style={{ width: "100%", padding: "0.75rem", background: styles.accent, color: "#0a1612", border: "none", borderRadius: 6, fontSize: "0.9rem", fontWeight: 600, cursor: "pointer" }}>Logg inn</button>
+        <button type="submit" style={{ width: "100%", padding: "0.75rem", background: styles.accent, color: "#FFFFFF", border: "none", borderRadius: 6, fontSize: "0.9rem", fontWeight: 600, cursor: "pointer" }}>Logg inn</button>
       </form>
     </div>
   );
