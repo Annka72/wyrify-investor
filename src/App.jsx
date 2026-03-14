@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.css";
+import { QRCodeSVG } from "qrcode.react";
 import BeaconIllustration from "./BeaconIllustration.jsx";
 import NetworkIllustration from "./NetworkIllustration.jsx";
 
@@ -612,7 +613,21 @@ export default function App() {
           </div>
         </Reveal>
 
-        <div style={{ marginTop: "6rem", paddingTop: "3rem", borderTop: `1px solid ${palette.border}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
+        {/* QR-kode for deling */}
+        <div style={{ marginTop: "4rem", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.75rem" }}>
+          <div style={{ background: palette.bgCard, padding: "1rem", borderRadius: "8px", border: `1px solid ${palette.border}` }}>
+            <QRCodeSVG
+              value="https://wyrify-investor-deploy.vercel.app/"
+              size={120}
+              bgColor={palette.bgCard}
+              fgColor={palette.textBright}
+              level="M"
+            />
+          </div>
+          <span style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.65rem", color: palette.textMuted, letterSpacing: "0.08em" }}>SKANN FOR Å DELE</span>
+        </div>
+
+        <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: `1px solid ${palette.border}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
             <svg viewBox="0 0 28 28" fill="none" width="22" height="22">
               <path d="M4,5 C4,14 7.5,17 11,17 C14.5,17 14.5,14 14.5,10" stroke={palette.accent} strokeWidth="2" strokeLinecap="round" fill="none"/>
