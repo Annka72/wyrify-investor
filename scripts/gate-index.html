@@ -38,13 +38,19 @@
       var PASS = 'Wyrify26';
       var APP_SCRIPT = '__APP_SCRIPT_SRC__';
 
-      if (sessionStorage.getItem(AUTH_KEY) === '1') {
+      function showApp() {
         document.getElementById('login-gate').style.display = 'none';
         document.getElementById('root').style.display = 'block';
+        document.body.style.display = 'block';
+        document.body.style.padding = '0';
         var s = document.createElement('script');
         s.type = 'module';
         s.src = APP_SCRIPT;
         document.body.appendChild(s);
+      }
+
+      if (sessionStorage.getItem(AUTH_KEY) === '1') {
+        showApp();
         return;
       }
 
@@ -55,12 +61,7 @@
         var errEl = document.getElementById('err');
         if (u === USER && p === PASS) {
           sessionStorage.setItem(AUTH_KEY, '1');
-          document.getElementById('login-gate').style.display = 'none';
-          document.getElementById('root').style.display = 'block';
-          var s = document.createElement('script');
-          s.type = 'module';
-          s.src = APP_SCRIPT;
-          document.body.appendChild(s);
+          showApp();
         } else {
           errEl.textContent = 'Feil brukernavn eller passord.';
           errEl.style.display = 'block';
