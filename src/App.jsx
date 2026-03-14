@@ -559,7 +559,7 @@ export default function App() {
       <div className="section-divider"/>
 
       {/* CTA / FOOTER */}
-      <section style={{ padding: "8rem 5vw", textAlign: "center", position: "relative", overflow: "hidden" }}>
+      <section id="kontakt" style={{ padding: "8rem 5vw", textAlign: "center", position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", left: "50%", top: "50%", transform: "translate(-50%,-50%)", width: 600, height: 600, opacity: 0.06, borderRadius: "50%", background: `radial-gradient(circle, ${palette.accent}, transparent 70%)`, filter: "blur(80px)", pointerEvents: "none" }}/>
         <Reveal>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.7rem", color: palette.accentDim, letterSpacing: "0.2em", marginBottom: "1.5rem" }}>{t.cta.label}</div>
@@ -634,7 +634,7 @@ export default function App() {
         </ul>
         <p style={{ marginTop: "1rem" }}>{t.modals.deck.contactIntro}</p>
         <p style={{ marginTop: "0.75rem" }}>
-          <strong>{t.modals.deck.emailLabel}</strong> investors@wyrify.com<br/>
+          <strong>{t.modals.deck.emailLabel}</strong> henrik@wyrify.com<br/>
           <strong>{t.modals.deck.phoneLabel}</strong> +44 (0) 20 7946 0958
         </p>
         <p style={{ marginTop: "1rem", fontSize: "0.82rem", color: palette.textMuted }}>{t.modals.deck.contactNote}</p>
@@ -650,7 +650,7 @@ export default function App() {
         </ul>
         <p style={{ marginTop: "1rem" }}>{t.modals.call.contactIntro}</p>
         <p style={{ marginTop: "0.75rem" }}>
-          <strong>{t.modals.call.emailLabel}</strong> investors@wyrify.com<br/>
+          <strong>{t.modals.call.emailLabel}</strong> henrik@wyrify.com<br/>
           <strong>{t.modals.call.phoneLabel}</strong> +44 (0) 20 7946 0958
         </p>
         <p style={{ marginTop: "1rem", fontSize: "0.82rem", color: palette.textMuted }}>{t.modals.call.contactNote}</p>
