@@ -4,7 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 import BeaconIllustration from "./BeaconIllustration.jsx";
 import NetworkIllustration from "./NetworkIllustration.jsx";
 import translations from "./translations.js";
-import wyrifyLogo from "./assets/wyrify-logo.png";
+import wyrifyLogo from "./assets/wyrify-logo-final.png";
 
 // Mørk blågrønn palett – inspirert av midlaier.no
 const palette = {
