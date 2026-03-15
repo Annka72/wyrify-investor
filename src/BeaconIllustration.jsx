@@ -108,14 +108,13 @@ export default function BeaconIllustration({ lang = "no" }) {
         <ellipse cx="60" cy="75" rx="48" ry="12" fill={palette.border} opacity="0.3" />
         <rect x="10" y="15" width="100" height="60" rx="28" fill="url(#beaconGrad)" stroke={palette.border} strokeWidth="1.5" />
 
-        {/* Wyrify W-logo på beacon — to U-er opp + J-hale ned */}
-        <g transform="translate(38, 25)">
-          {/* Venstre U (åpen opp) */}
-          <path d="M6,6 C6,18 12,22 18,22 C24,22 24,18 24,12" stroke={palette.accent} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-          {/* Høyre U (åpen opp) */}
-          <path d="M20,8 C20,18 26,22 32,22 C38,22 40,18 40,12" stroke={palette.accent} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-          {/* J-hale som kurver ned fra høyre U */}
-          <path d="M40,12 C40,18 40,28 32,32" stroke={palette.accent} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        {/* Wyrify W-logo på beacon — med boks-topper */}
+        <g transform="translate(36, 24)">
+          <path d="M4,2 L4,8 L10,8 L10,2" stroke={palette.accent} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
+          <path d="M4,8 C4,18 10,22 17,22 C24,22 24,17 24,12" stroke={palette.accent} strokeWidth="2.2" strokeLinecap="round" fill="none" />
+          <path d="M20,4 L20,10 L26,10 L26,4" stroke={palette.accent} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
+          <path d="M20,10 C20,18 26,22 33,22 C40,22 42,17 42,12" stroke={palette.accent} strokeWidth="2.2" strokeLinecap="round" fill="none" />
+          <path d="M42,12 C42,20 42,30 34,34" stroke={palette.accent} strokeWidth="2.2" strokeLinecap="round" fill="none" />
         </g>
 
         {/* Pulserende ring rundt beacon */}

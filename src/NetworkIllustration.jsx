@@ -69,9 +69,11 @@ const AnimatedChain = ({ x1, y1, x2, y2, id, delay = 0 }) => {
 /* Wyrify W-logo */
 const WyrifyLogo = ({ x, y, size = 1, color = p.accent }) => (
   <g transform={`translate(${x}, ${y}) scale(${size})`}>
-    <path d="M-16,-8 C-16,6 -10,10 -4,10 C2,10 2,6 2,0" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-    <path d="M-2,-6 C-2,6 4,10 10,10 C16,10 18,6 18,0" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-    <path d="M18,0 C18,8 18,18 10,22" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+    <path d="M-18,-12 L-18,-4 L-12,-4 L-12,-12" stroke={color} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
+    <path d="M-18,-4 C-18,8 -12,12 -5,12 C2,12 2,8 2,2" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
+    <path d="M-2,-10 L-2,-2 L4,-2 L4,-10" stroke={color} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
+    <path d="M-2,-2 C-2,8 4,12 11,12 C18,12 20,8 20,2" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
+    <path d="M20,2 C20,10 20,20 12,24" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
   </g>
 );
 
