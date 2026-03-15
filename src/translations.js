@@ -14,14 +14,14 @@ const translations = {
     },
 
     hero: {
-      label: "OFFLINE BETALINGSINFRASTRUKTUR",
+      label: "UAVHENGIG BETALINGSINFRASTRUKTUR",
       titleLine1: "Betaling uten",
       titleLine2: "bank eller kort",
       titleLine3: "Overalt",
       description:
-        "Wyrify er verdens første betalingsplattform som fungerer helt uten bankkort, uten VISA eller Mastercard, og uten internettforbindelse. Vår Bluetooth-baserte beacon-teknologi gjør det mulig å gjennomføre sikre transaksjoner offline — på under to sekunder.",
+        "Wyrify er verdens første betalingsplattform som fungerer helt uten bankkort og helt uavhengig av VISA eller Mastercard. Vår Bluetooth-baserte beacon-teknologi gjør det mulig å gjennomføre sikre transaksjoner på under to sekunder — med begrenset offline-funksjonalitet der nettilgang ikke er tilgjengelig.",
       pills: [
-        "Offline-betaling",
+        "Uavhengig av kort",
         "Ingen bankkort",
         "0,5 % gebyr",
         "1–2 sek. transaksjoner",
@@ -49,7 +49,7 @@ const translations = {
       },
       {
         value: "1–2s",
-        label: "Transaksjonstid — også uten nettforbindelse",
+        label: "Transaksjonstid via blokkjeden",
         sub: "vs 3–5 dager tradisjonelt",
       },
       {
@@ -83,14 +83,14 @@ const translations = {
           body: "Over tre milliarder mennesker har ingen bankkonto, og dermed ingen mulighet til å delta i digital økonomi. Tradisjonelle betalingssystemer krever bankforbindelse, kredittvurdering og fysisk infrastruktur som ikke finnes i store deler av verden. Disse menneskene er låst ute — ikke fordi teknologien ikke finnes, men fordi den aldri ble laget for dem.",
         },
         {
-          icon: "📡",
-          title: "Avhengighet av nettforbindelse",
-          body: "Nesten alle moderne betalingsløsninger krever stabil internettilgang. I områder med dårlig dekning — utkantstrøk, utviklingsland, festivaler, skip, fjellområder — faller betalingssystemet sammen. Wyrify er designet for å fungere offline via Bluetooth, uavhengig av nettverkstilgang.",
+          icon: "💳",
+          title: "Avhengighet av kortnettverket",
+          body: "Selv nye fintech-løsninger er bygget oppå VISA og Mastercards infrastruktur. De er raskere grensesnitt til det samme gamle systemet — med de samme gebyrene, de samme mellomleddene og de samme begrensningene. Ingen har til nå bygget et genuint alternativ som erstatter selve kortnettverket.",
         },
         {
           icon: "🔒",
           title: "Ingen reelt alternativ — før nå",
-          body: "POS-markedet har aldri hatt ekte konkurranse. Plastkortet har dominert i over 50 år, og selv nye fintech-løsninger er bygget oppå det samme gamle kortnettverket. Wyrify er fundamentalt annerledes: en fullverdig betalingsplattform som erstatter hele verdikjeden — fra terminal til oppgjør — uten kort, uten bank, uten nettforbindelse.",
+          body: "POS-markedet har aldri hatt ekte konkurranse. Plastkortet har dominert i over 50 år. Wyrify er fundamentalt annerledes: en fullverdig betalingsplattform som erstatter hele verdikjeden — fra terminal til oppgjør — uten kort og uten bankavhengighet.",
         },
       ],
     },
@@ -100,15 +100,15 @@ const translations = {
       titleLine1: "En komplett betalingsplattform,",
       titleLine2: "bygget fra grunnen av",
       description:
-        "Wyrify kombinerer en Bluetooth BLE-basert hardware-beacon, mobilapper for kunder og forhandlere, og en online betalingsløsning — alt drevet av en proprietær proof-of-stake-blokkjede med 1–2 sekunders bekreftelsestid. Plattformen fungerer offline, uten bankkort og uten avhengighet av VISA eller Mastercard.",
+        "Wyrify kombinerer en Bluetooth BLE-basert hardware-beacon, mobilapper for kunder og forhandlere, og en online betalingsløsning — alt drevet av en proprietær proof-of-stake-blokkjede med 1–2 sekunders bekreftelsestid. Plattformen er primært online, men støtter begrenset offline-bruk via Bluetooth der nettilgang mangler.",
       cards: [
         {
           num: "01",
           title: "Wyrify Beacon",
           subtitle: "POS-hardware",
-          desc: "En Bluetooth Low Energy-terminal som erstatter tradisjonelle kortlesere fullstendig. Forhandlere mottar beaconen gratis og betaler kun 0,5 % per transaksjon. Kunder betaler via Wyrify-appen — uten kort, uten bank, uten nettforbindelse. Beaconen kommuniserer direkte med kundens telefon over BLE, og transaksjonen bekreftes på 1–2 sekunder. Selv uten internett gjennomføres betalingen trygt, og synkroniseres til blokkjeden når tilkobling gjenopprettes.",
+          desc: "En Bluetooth Low Energy-terminal som erstatter tradisjonelle kortlesere fullstendig. Forhandlere mottar beaconen gratis og betaler kun 0,5 % per transaksjon. Kunder betaler via Wyrify-appen — uten kort og uten bank. Beaconen kommuniserer direkte med kundens telefon over BLE, og transaksjonen bekreftes på 1–2 sekunder. Ved begrenset nettilgang kan mindre transaksjoner gjennomføres lokalt og synkroniseres til blokkjeden når tilkobling gjenopprettes.",
           features: [
-            "BLE / NFC — fungerer offline",
+            "BLE / NFC-kommunikasjon",
             "Umiddelbart oppgjør",
             "Alle kryptovalutaer akseptert",
             "Null risiko for tilbakebetaling",
@@ -142,8 +142,8 @@ const translations = {
       flowLabel: "TRANSAKSJONSFLYT",
       flowSteps: [
         { label: "Kunde", sub: "App / Lommebok", icon: "📱" },
-        { label: "Wyrify Beacon", sub: "BLE-signal (offline)", icon: "📡" },
-        { label: "Blokkjede", sub: "NXChain-node", icon: "⛓️" },
+        { label: "Wyrify Beacon", sub: "BLE-signal", icon: "📡" },
+        { label: "Blokkjede", sub: "Krypto-node", icon: "⛓️" },
         {
           label: "Forhandlerkonto",
           sub: "Umiddelbart oppgjør",
@@ -152,7 +152,7 @@ const translations = {
       ],
       flowStats: [
         ["⚡ 1–2 sekunder", "Transaksjonstid"],
-        ["📡 Fungerer offline", "Via Bluetooth BLE"],
+        ["🔗 Uavhengig", "Ingen kort eller bank"],
         ["💱 Alle valutaer", "Fiat & krypto"],
       ],
     },
@@ -169,7 +169,7 @@ const translations = {
           icon: "🌍",
           title: "Befolkning uten banktjenester",
           urgency: 95,
-          desc: "Over tre milliarder mennesker mangler grunnleggende finansielle tjenester. Med Wyrify kan enhver forhandler bli et bankpunkt. Vår agentmodell muliggjør person-til-person-transaksjoner, mikrolån og sparing — alt via en mobiltelefon og en beacon, uten behov for bankkonto eller internettforbindelse.",
+          desc: "Over tre milliarder mennesker mangler grunnleggende finansielle tjenester. Med Wyrify kan enhver forhandler bli et bankpunkt. Vår agentmodell muliggjør person-til-person-transaksjoner, mikrolån og sparing — alt via en mobiltelefon og en beacon, uten behov for bankkonto.",
           pilot: "Dialog med afrikanske myndigheter",
         },
         {
@@ -188,9 +188,9 @@ const translations = {
         },
         {
           icon: "🏪",
-          title: "Detaljhandel i områder uten dekning",
+          title: "Detaljhandel uten kortavhengighet",
           urgency: 90,
-          desc: "Butikker i utkantstrøk, på markeder, festivaler og i utviklingsland trenger betalingsløsninger som fungerer uten stabil internettforbindelse. Wyrify sin offline Bluetooth-beacon gjør det mulig å ta imot digitale betalinger selv der mobilnettet svikter.",
+          desc: "Butikker som ønsker seg bort fra høye kortgebyrer og lang oppgjørstid. Wyrify tilbyr en komplett alternativ betalingsinfrastruktur med umiddelbart oppgjør, null tilbakebetalinger og langt lavere kostnader enn tradisjonelle kortterminaler.",
           pilot: "Pilotprosjekter i Skandinavia",
         },
         {
@@ -204,7 +204,7 @@ const translations = {
           icon: "🚢",
           title: "Maritim og offshore",
           urgency: 70,
-          desc: "Skip, oljeplattformer og avsidesliggende arbeidsplasser har begrenset nettilgang. Wyrify sin offline-kapabilitet gjør det mulig å gjennomføre betalinger, lønnsutbetalinger og innkjøp selv midt på havet — med synkronisering til blokkjeden når tilkobling gjenopprettes.",
+          desc: "Skip, oljeplattformer og avsidesliggende arbeidsplasser har behov for fleksible betalingsløsninger. Wyrify sin beacon-teknologi muliggjør transaksjoner med begrenset tilkobling, med synkronisering til blokkjeden når full nettilgang gjenopprettes.",
           pilot: "I utredning",
         },
       ],
@@ -266,7 +266,7 @@ const translations = {
       ],
       proofLabel: "KONSEPTBEVIS — DANMARK",
       proofText:
-        'I 2013 utviklet GoAppified beacon-baserte betalinger for MobilePay™ i Danmark. Innen <strong style="color: #1A2E28">to år hadde 80 % av den betalende befolkningen</strong> appen. Konkurrenter med 40 % markedsandel la ned. Kontantbruken i småbutikker kollapset. Wyrify har tatt denne velprøvde modellen og transformert den for global bruk med kryptovaluta og offline-funksjonalitet.',
+        'I 2013 utviklet GoAppified beacon-baserte betalinger for MobilePay™ i Danmark. Innen <strong style="color: #E4EBE8">to år hadde 80 % av den betalende befolkningen</strong> appen. Konkurrenter med 40 % markedsandel la ned. Kontantbruken i småbutikker kollapset. Wyrify har tatt denne velprøvde modellen og transformert den for global bruk med kryptovaluta.',
     },
 
     business: {
@@ -313,10 +313,11 @@ const translations = {
       advantageTitle: "Konkurransefortrinn",
       advantages: [
         "Eneste plattform som fullt ut erstatter bank + kort ved POS",
-        "Fungerer offline — ingen avhengighet av internett",
+        "Uavhengig av VISA og Mastercard",
         "Forhandlerkostnad per enhet: ca. $3–5",
         "Ingen minstegrense — støtter mikrobetalinger",
         "Fastprisoppgjør fjerner all volatilitetsrisiko for forhandlere",
+        "Begrenset offline-støtte via Bluetooth BLE",
         "Samarbeidspartnere med milliardomsetning",
       ],
     },
@@ -369,11 +370,12 @@ const translations = {
         body: "Wyrify er en komplett betalingsplattform som erstatter tradisjonelle kortterminaler med Bluetooth-basert beacon-teknologi. Plattformen fungerer uavhengig av VISA, Mastercard og bankinfrastruktur.",
         principlesTitle: "Nøkkelprinsipper:",
         principles: [
-          "Offline-først: Transaksjoner gjennomføres via Bluetooth BLE uten internettforbindelse",
+          "Uavhengig: Fungerer uten VISA, Mastercard eller bankinfrastruktur",
           "Umiddelbart oppgjør: 1–2 sekunder, sammenlignet med 3–5 dager for tradisjonelle kort",
           "Null tilbakebetalingsrisiko: Blokkjedebasert, irreversibel bekreftelse",
           "Universell tilgang: Fungerer for alle — uavhengig av bankkonto eller kredittvurdering",
           "Fastpris-clearing: Forhandlere er beskyttet mot kryptovolatilitet",
+          "Begrenset offline-støtte: Små transaksjoner kan gjennomføres via BLE uten nett",
         ],
         techNote:
           "Plattformen er bygget på NXChain, en proprietær proof-of-stake-blokkjede med kapasitet på 30 000–40 000 transaksjoner per sekund. Systemet er designet for å skalere horisontalt etter behov.",
@@ -449,14 +451,14 @@ const translations = {
     },
 
     hero: {
-      label: "OFFLINE PAYMENT INFRASTRUCTURE",
+      label: "INDEPENDENT PAYMENT INFRASTRUCTURE",
       titleLine1: "Payments without",
-      titleLine2: "bank or card",
+      titleLine2: "banks or cards",
       titleLine3: "Everywhere",
       description:
-        "Wyrify is the world's first payment platform that works entirely without bank cards, without Visa or Mastercard, and without an internet connection. Our Bluetooth-based beacon technology enables secure offline transactions — in under two seconds.",
+        "Wyrify is the world's first payment platform that works entirely without bank cards and completely independent of Visa or Mastercard. Our Bluetooth-based beacon technology enables secure transactions in under two seconds — with limited offline functionality where internet access is unavailable.",
       pills: [
-        "Offline payments",
+        "Card-independent",
         "No bank cards",
         "0.5% fee",
         "1–2 sec transactions",
@@ -484,7 +486,7 @@ const translations = {
       },
       {
         value: "1–2s",
-        label: "Transaction time — even without internet",
+        label: "Transaction time via the blockchain",
         sub: "vs 3–5 days traditional",
       },
       {
@@ -518,14 +520,14 @@ const translations = {
           body: "Over three billion people have no bank account, and therefore no way to participate in the digital economy. Traditional payment systems require a bank connection, credit assessment, and physical infrastructure that doesn't exist in large parts of the world. These people are locked out — not because the technology doesn't exist, but because it was never built for them.",
         },
         {
-          icon: "📡",
-          title: "Dependence on internet",
-          body: "Nearly all modern payment solutions require a stable internet connection. In areas with poor coverage — rural regions, developing countries, festivals, ships, mountain areas — the payment system breaks down. Wyrify is designed to work offline via Bluetooth, independent of network access.",
+          icon: "💳",
+          title: "Dependence on the card network",
+          body: "Even new fintech solutions are built on top of Visa and Mastercard's infrastructure. They are faster interfaces to the same old system — with the same fees, the same intermediaries, and the same limitations. No one has yet built a genuine alternative that replaces the card network itself.",
         },
         {
           icon: "🔒",
           title: "No real alternative — until now",
-          body: "The POS market has never had true competition. The plastic card has dominated for over 50 years, and even new fintech solutions are built on top of the same old card network. Wyrify is fundamentally different: a full payment platform that replaces the entire value chain — from terminal to settlement — without cards, without banks, without internet.",
+          body: "The POS market has never had true competition. The plastic card has dominated for over 50 years. Wyrify is fundamentally different: a full payment platform that replaces the entire value chain — from terminal to settlement — without cards and without bank dependence.",
         },
       ],
     },
@@ -535,15 +537,15 @@ const translations = {
       titleLine1: "A complete payment platform,",
       titleLine2: "built from the ground up",
       description:
-        "Wyrify combines a Bluetooth BLE-based hardware beacon, mobile apps for customers and merchants, and an online payment solution — all powered by a proprietary proof-of-stake blockchain with 1–2 second confirmation time. The platform works offline, without bank cards, and without dependence on Visa or Mastercard.",
+        "Wyrify combines a Bluetooth BLE-based hardware beacon, mobile apps for customers and merchants, and an online payment solution — all powered by a proprietary proof-of-stake blockchain with 1–2 second confirmation time. The platform is primarily online, with limited offline support via Bluetooth where internet access is unavailable.",
       cards: [
         {
           num: "01",
           title: "Wyrify Beacon",
           subtitle: "POS hardware",
-          desc: "A Bluetooth Low Energy terminal that completely replaces traditional card readers. Merchants receive the beacon for free and pay only 0.5% per transaction. Customers pay via the Wyrify app — no cards, no bank, no internet connection. The beacon communicates directly with the customer's phone over BLE, and the transaction is confirmed in 1–2 seconds. Even without internet, the payment is processed securely and synced to the blockchain when connectivity is restored.",
+          desc: "A Bluetooth Low Energy terminal that completely replaces traditional card readers. Merchants receive the beacon for free and pay only 0.5% per transaction. Customers pay via the Wyrify app — no cards, no bank. The beacon communicates directly with the customer's phone over BLE, and the transaction is confirmed in 1–2 seconds. With limited connectivity, smaller transactions can be processed locally and synced to the blockchain when connectivity is restored.",
           features: [
-            "BLE / NFC — works offline",
+            "BLE / NFC communication",
             "Instant settlement",
             "All cryptocurrencies accepted",
             "Zero chargeback risk",
@@ -577,8 +579,8 @@ const translations = {
       flowLabel: "TRANSACTION FLOW",
       flowSteps: [
         { label: "Customer", sub: "App / Wallet", icon: "📱" },
-        { label: "Wyrify Beacon", sub: "BLE signal (offline)", icon: "📡" },
-        { label: "Blockchain", sub: "NXChain node", icon: "⛓️" },
+        { label: "Wyrify Beacon", sub: "BLE signal", icon: "📡" },
+        { label: "Blockchain", sub: "Crypto node", icon: "⛓️" },
         {
           label: "Merchant account",
           sub: "Instant settlement",
@@ -587,7 +589,7 @@ const translations = {
       ],
       flowStats: [
         ["⚡ 1–2 seconds", "Transaction time"],
-        ["📡 Works offline", "Via Bluetooth BLE"],
+        ["🔗 Independent", "No cards or banks"],
         ["💱 All currencies", "Fiat & crypto"],
       ],
     },
@@ -604,7 +606,7 @@ const translations = {
           icon: "🌍",
           title: "Unbanked population",
           urgency: 95,
-          desc: "Over three billion people lack basic financial services. With Wyrify, any merchant can become a banking point. Our agent model enables person-to-person transactions, microloans, and savings — all via a mobile phone and a beacon, with no need for a bank account or internet connection.",
+          desc: "Over three billion people lack basic financial services. With Wyrify, any merchant can become a banking point. Our agent model enables person-to-person transactions, microloans, and savings — all via a mobile phone and a beacon, with no need for a bank account.",
           pilot: "Dialogue with African authorities",
         },
         {
@@ -623,9 +625,9 @@ const translations = {
         },
         {
           icon: "🏪",
-          title: "Retail in areas without coverage",
+          title: "Retail without card dependence",
           urgency: 90,
-          desc: "Shops in rural areas, at markets, festivals, and in developing countries need payment solutions that work without a stable internet connection. Wyrify's offline Bluetooth beacon makes it possible to accept digital payments even where the mobile network fails.",
+          desc: "Shops that want to move away from high card fees and long settlement times. Wyrify offers a complete alternative payment infrastructure with instant settlement, zero chargebacks, and significantly lower costs than traditional card terminals.",
           pilot: "Pilot projects in Scandinavia",
         },
         {
@@ -639,7 +641,7 @@ const translations = {
           icon: "🚢",
           title: "Maritime and offshore",
           urgency: 70,
-          desc: "Ships, oil platforms, and remote workplaces have limited internet access. Wyrify's offline capability makes it possible to process payments, payroll, and purchases even in the middle of the ocean — with synchronization to the blockchain when connectivity is restored.",
+          desc: "Ships, oil platforms, and remote workplaces need flexible payment solutions. Wyrify's beacon technology enables transactions with limited connectivity, with synchronization to the blockchain when full internet access is restored.",
           pilot: "Under evaluation",
         },
       ],
@@ -701,7 +703,7 @@ const translations = {
       ],
       proofLabel: "PROOF OF CONCEPT — DENMARK",
       proofText:
-        'In 2013, GoAppified developed beacon-based payments for MobilePay™ in Denmark. Within <strong style="color: #1A2E28">two years, 80% of the paying population</strong> had the app. Competitors with 40% market share shut down. Cash usage in small shops collapsed. Wyrify has taken this proven model and transformed it for global use with cryptocurrency and offline functionality.',
+        'In 2013, GoAppified developed beacon-based payments for MobilePay™ in Denmark. Within <strong style="color: #E4EBE8">two years, 80% of the paying population</strong> had the app. Competitors with 40% market share shut down. Cash usage in small shops collapsed. Wyrify has taken this proven model and transformed it for global use with cryptocurrency.',
     },
 
     business: {
@@ -748,10 +750,11 @@ const translations = {
       advantageTitle: "Competitive advantages",
       advantages: [
         "Only platform that fully replaces bank + card at POS",
-        "Works offline — no dependence on internet",
+        "Independent of Visa and Mastercard",
         "Merchant cost per unit: approx. $3–5",
         "No minimum amount — supports micropayments",
         "Fixed-price settlement removes all volatility risk for merchants",
+        "Limited offline support via Bluetooth BLE",
         "Partners with billion-dollar revenue",
       ],
     },
@@ -804,11 +807,12 @@ const translations = {
         body: "Wyrify is a complete payment platform that replaces traditional card terminals with Bluetooth-based beacon technology. The platform operates independently of Visa, Mastercard, and banking infrastructure.",
         principlesTitle: "Key principles:",
         principles: [
-          "Offline-first: Transactions are completed via Bluetooth BLE without internet connection",
+          "Independent: Works without Visa, Mastercard, or banking infrastructure",
           "Instant settlement: 1–2 seconds, compared to 3–5 days for traditional cards",
           "Zero chargeback risk: Blockchain-based, irreversible confirmation",
           "Universal access: Works for everyone — regardless of bank account or credit assessment",
           "Fixed-price clearing: Merchants are protected against crypto volatility",
+          "Limited offline support: Small transactions can be processed via BLE without internet",
         ],
         techNote:
           "The platform is built on NXChain, a proprietary proof-of-stake blockchain with a capacity of 30,000–40,000 transactions per second. The system is designed to scale horizontally as needed.",
