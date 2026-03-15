@@ -76,7 +76,7 @@ export default function App() {
   const [scrollY, setScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [modal, setModal] = useState(null);
-  const [lang, setLang] = useState("no");
+  const [lang, setLang] = useState("en");
 
   const t = translations[lang];
 
