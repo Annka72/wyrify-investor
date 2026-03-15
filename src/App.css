@@ -57,6 +57,7 @@
     min-height: auto !important;
     align-items: flex-start !important;
     padding-top: 5.5rem !important;
+    flex-direction: column !important;
   }
   .wyrify-app .hero-content {
     max-width: 100% !important;
@@ -101,9 +102,17 @@
     font-size: 0.8rem !important;
     text-align: center;
   }
-  .wyrify-app .hero-beacon,
   .wyrify-app .hero-glow {
     display: none !important;
+  }
+  .wyrify-app .hero-beacon {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem;
+    order: -1;
   }
   .wyrify-app .hero-section .hero-grid,
   .wyrify-app .hero-section .noise-overlay {
