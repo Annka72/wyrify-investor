@@ -4,6 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 import BeaconIllustration from "./BeaconIllustration.jsx";
 import NetworkIllustration from "./NetworkIllustration.jsx";
 import translations from "./translations.js";
+import wyrifyLogo from "./assets/wyrify-logo.png";
 
 // Mørk blågrønn palett – inspirert av midlaier.no
 const palette = {
@@ -128,18 +129,7 @@ export default function App() {
         display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap",
       }}>
         <div className="nav-brand" style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <div style={{ width: 28, height: 28, position: "relative" }}>
-            <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "100%" }}>
-              {/* Venstre U med boks-topp */}
-              <path d="M3,4 L3,8 L7,8 L7,4" stroke={palette.accent} strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-              <path d="M3,8 C3,16 7,19 11,19 C15,19 15,15 15,11" stroke={palette.accent} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              {/* Høyre U med boks-topp */}
-              <path d="M13,5 L13,9 L17,9 L17,5" stroke={palette.accent} strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-              <path d="M13,9 C13,16 17,19 21,19 C25,19 25,15 25,11" stroke={palette.accent} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              {/* J-hale */}
-              <path d="M25,11 C25,17 25,24 19,27" stroke={palette.accent} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-            </svg>
-          </div>
+          <img src={wyrifyLogo} alt="Wyrify" style={{ width: 32, height: "auto", opacity: 0.9 }} />
           <span style={{ fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.95rem", color: palette.textBright, letterSpacing: "0.15em" }}>WYRIFY</span>
         </div>
         <div className="nav-desktop-links" style={{ display: "flex", gap: "2rem" }}>
@@ -197,13 +187,7 @@ export default function App() {
             <div key={i} style={{ position: "absolute", width: 80 * s, height: 80 * s, borderRadius: "50%", border: `1px solid ${palette.accent}${Math.floor(30 - i * 6).toString(16).padStart(2,"0")}`, animation: `pulse-ring ${2 + i * 0.5}s ease-out ${i * 0.4}s infinite` }}/>
           ))}
           <div style={{ width: 80, height: 80, borderRadius: "50%", background: `linear-gradient(135deg, ${palette.teal}, ${palette.tealBright})`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 30px ${palette.accent}33, 0 0 60px ${palette.teal}22` }}>
-            <svg viewBox="0 0 40 40" fill="none" width="42" height="42">
-              <path d="M5,6 L5,12 L10,12 L10,6" stroke={palette.bgCard} strokeWidth="2.5" strokeLinejoin="round" fill="none"/>
-              <path d="M5,12 C5,22 10,27 16,27 C22,27 22,22 22,16" stroke={palette.bgCard} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-              <path d="M19,8 L19,14 L24,14 L24,8" stroke={palette.bgCard} strokeWidth="2.5" strokeLinejoin="round" fill="none"/>
-              <path d="M19,14 C19,22 24,27 30,27 C35,27 36,22 36,16" stroke={palette.bgCard} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-              <path d="M36,16 C36,24 36,34 28,38" stroke={palette.bgCard} strokeWidth="2.5" strokeLinecap="round" fill="none"/>
-            </svg>
+            <img src={wyrifyLogo} alt="Wyrify" style={{ width: 48, height: "auto" }} />
           </div>
         </div>
 
@@ -602,16 +586,7 @@ export default function App() {
 
         <div className="wyrify-footer" style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: `1px solid ${palette.border}`, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            <svg viewBox="0 0 28 28" fill="none" width="22" height="22">
-              {/* Venstre U med boks-topp */}
-              <path d="M3,4 L3,8 L7,8 L7,4" stroke={palette.accent} strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-              <path d="M3,8 C3,16 7,19 11,19 C15,19 15,15 15,11" stroke={palette.accent} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              {/* Høyre U med boks-topp */}
-              <path d="M13,5 L13,9 L17,9 L17,5" stroke={palette.accent} strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-              <path d="M13,9 C13,16 17,19 21,19 C25,19 25,15 25,11" stroke={palette.accent} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              {/* J-hale */}
-              <path d="M25,11 C25,17 25,24 19,27" stroke={palette.accent} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-            </svg>
+            <img src={wyrifyLogo} alt="Wyrify" style={{ width: 26, height: "auto", opacity: 0.9 }} />
             <span style={{ fontFamily: "'Space Mono', monospace", fontWeight: 700, fontSize: "0.85rem", color: palette.textBright }}>WYRIFY</span>
           </div>
           <div style={{ fontFamily: "'Space Mono', monospace", fontSize: "0.6rem", color: palette.textMuted }}>
