@@ -5,6 +5,7 @@ import BeaconIllustration from "./BeaconIllustration.jsx";
 import NetworkIllustration from "./NetworkIllustration.jsx";
 import translations from "./translations.js";
 import wyrifyLogo from "./assets/wyrify-logo-final.png";
+import BlockchainHero from "./BlockchainHero.jsx";
 
 // Mørk blågrønn palett – inspirert av midlaier.no
 const palette = {
@@ -182,13 +183,8 @@ export default function App() {
         <div className="hero-grid"/>
         <div className="noise-overlay"/>
 
-        <div className="hero-beacon float-anim" style={{ position: "absolute", right: "10%", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center", justifyContent: "center", width: 320, height: 320 }}>
-          {[1, 1.5, 2, 2.5].map((s, i) => (
-            <div key={i} style={{ position: "absolute", width: 80 * s, height: 80 * s, borderRadius: "50%", border: `1px solid ${palette.accent}${Math.floor(30 - i * 6).toString(16).padStart(2,"0")}`, animation: `pulse-ring ${2 + i * 0.5}s ease-out ${i * 0.4}s infinite` }}/>
-          ))}
-          <div style={{ width: 80, height: 80, borderRadius: "50%", background: `linear-gradient(135deg, ${palette.teal}, ${palette.tealBright})`, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 30px ${palette.accent}33, 0 0 60px ${palette.teal}22` }}>
-            <img src={wyrifyLogo} alt="Wyrify" style={{ width: 48, height: "auto" }} />
-          </div>
+        <div className="hero-beacon" style={{ position: "absolute", right: "5%", top: "50%", transform: "translateY(-50%)", display: "flex", alignItems: "center", justifyContent: "center", width: 420 }}>
+          <BlockchainHero />
         </div>
 
         <div className="hero-content" style={{ position: "relative", zIndex: 2, maxWidth: 680 }}>
