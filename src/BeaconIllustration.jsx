@@ -1,4 +1,5 @@
 import translations from "./translations.js";
+import wyrifyLogo from "./assets/wyrify-logo-final.png";
 
 const palette = {
   bg: "#1B2A2E",
@@ -108,14 +109,8 @@ export default function BeaconIllustration({ lang = "no" }) {
         <ellipse cx="60" cy="75" rx="48" ry="12" fill={palette.border} opacity="0.3" />
         <rect x="10" y="15" width="100" height="60" rx="28" fill="url(#beaconGrad)" stroke={palette.border} strokeWidth="1.5" />
 
-        {/* Wyrify W-logo på beacon — med boks-topper */}
-        <g transform="translate(36, 24)">
-          <path d="M4,2 L4,8 L10,8 L10,2" stroke={palette.accent} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
-          <path d="M4,8 C4,18 10,22 17,22 C24,22 24,17 24,12" stroke={palette.accent} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-          <path d="M20,4 L20,10 L26,10 L26,4" stroke={palette.accent} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
-          <path d="M20,10 C20,18 26,22 33,22 C40,22 42,17 42,12" stroke={palette.accent} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-          <path d="M42,12 C42,20 42,30 34,34" stroke={palette.accent} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-        </g>
+        {/* Wyrify-logo på beacon */}
+        <image href={wyrifyLogo} x="35" y="25" width="50" height="30" />
 
         {/* Pulserende ring rundt beacon */}
         <ellipse cx="60" cy="45" rx="40" ry="22" fill="none" stroke={palette.accent} strokeWidth="1" opacity="0.15">

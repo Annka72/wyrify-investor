@@ -1,4 +1,5 @@
 import translations from "./translations.js";
+import wyrifyLogo from "./assets/wyrify-logo-final.png";
 
 const p = {
   bg: "#1B2A2E",
@@ -66,15 +67,9 @@ const AnimatedChain = ({ x1, y1, x2, y2, id, delay = 0 }) => {
   );
 };
 
-/* Wyrify W-logo */
-const WyrifyLogo = ({ x, y, size = 1, color = p.accent }) => (
-  <g transform={`translate(${x}, ${y}) scale(${size})`}>
-    <path d="M-18,-12 L-18,-4 L-12,-4 L-12,-12" stroke={color} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
-    <path d="M-18,-4 C-18,8 -12,12 -5,12 C2,12 2,8 2,2" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-    <path d="M-2,-10 L-2,-2 L4,-2 L4,-10" stroke={color} strokeWidth="2.2" strokeLinejoin="round" fill="none" />
-    <path d="M-2,-2 C-2,8 4,12 11,12 C18,12 20,8 20,2" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-    <path d="M20,2 C20,10 20,20 12,24" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-  </g>
+/* Wyrify-logo som bilde */
+const WyrifyLogoImg = ({ x, y, width = 30 }) => (
+  <image href={wyrifyLogo} x={x - width / 2} y={y - width * 0.3} width={width} height={width * 0.6} />
 );
 
 /* Telefon-ikon */
@@ -84,7 +79,7 @@ const Phone = ({ x, y, label }) => (
     <rect x="-24" y="-40" width="48" height="76" rx="4" fill={p.bg} />
     {/* Skjerminnhold */}
     <circle cx="0" cy="-18" r="10" fill={`${p.accent}18`} stroke={p.accent} strokeWidth="1" />
-    <WyrifyLogo x="0" y="-18" size={0.4} color={p.accent} />
+    <WyrifyLogoImg x="0" y="-18" width={16} />
     <rect x="-14" y="0" width="28" height="4" rx="2" fill={p.border} />
     <rect x="-10" y="8" width="20" height="4" rx="2" fill={p.border} />
     <rect x="-12" y="18" width="24" height="10" rx="5" fill={p.accent} />
@@ -176,7 +171,7 @@ export default function NetworkIllustration({ lang = "no" }) {
         {/* Wyrify-logo ved siden av butikken */}
         <g transform="translate(-55, -15)">
           <circle r="16" fill={`${p.accent}12`} stroke={p.accent} strokeWidth="1" />
-          <WyrifyLogo x="0" y="0" size={0.5} color={p.accent} />
+          <WyrifyLogoImg x="0" y="0" width={22} />
         </g>
 
         {/* Label */}
